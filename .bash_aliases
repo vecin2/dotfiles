@@ -1,0 +1,7 @@
+alias ad="cd $AD/shell_tools"
+alias wss="cd $WSS/bin"
+alias mp="cd ~/dev/workspaces/RubyWeb/MyKitty/"
+alias docprj="cd $PRJ_DOCS"
+alias adprocesslogs="cd $ADPROCESSLOGS"
+alias adapplogs="cd $ADAPPLOGS"
+alias adserverlogs="cd $ADSERVERLOGS"
