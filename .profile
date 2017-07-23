@@ -31,14 +31,15 @@ PRJ_DOCS="~/Documents/SPEN/CSO"
 CONTAINER_NAME=container_ad_1
 ADPROCESSLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/process/
 ADAPPLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/application
-ADSERVERLOGS=$AD/logs/localhost-$CONTAINER_NAME/weblogic
+ADSERVERLOGS=$AD/logs/localhost-$CONTAINER_NAME/jboss
 
 #WSS="/opt/em/projects/prudential/MCCS/WebSelfService/trunk"
 
 export JAVA_HOME
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export AD ADPROCESSLOGS ADAPPLOGS ADSERVERLOGS WSS WEBLOGIC_HOME
-
+export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+export PATH=$PATH:$ORACLE_HOME/bin 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 

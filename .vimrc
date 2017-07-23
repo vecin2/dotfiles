@@ -19,12 +19,22 @@ nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 
+"Save Ctrl+S
+" If the current buffer has never been saved, it will have no name,
+" " call the file browser to save it, otherwise just save it.
+ command -nargs=0 -bar Update if &modified 
+                            \|    if empty(bufname('%'))
+                            \|        browse confirm write
+                            \|     else
+                            \|        confirm write
+			    \|     endif 
+			    \|endif 
+ nnoremap <silent><C-S> :<C-u>Update<CR>
+ inoremap <c-s> <Esc>:Update<CR>
+
+"Nerdtree
 nmap <c-n> :NERDTreeToggle<CR>
-"let nerdtreeshowhidden=1
-"autocmd vimenter * if (argc()==0 || argc()==1 && isdirectory(argv()[0])) | nerdtree | endif
 autocmd VimEnter * if !argc() | NERDTree | endif
-"let g:nerdtreehijacknetrw = 1
-"au vimenter nerd_tree_1 enew | execute 'nerdtree '.argv()[0]
 
 syntax enable
 let g:solarized_termcolors=16      
@@ -54,6 +64,7 @@ Plugin 'git://github.com/altercation/vim-colors-solarized.git'
 Plugin 'scrooloose/nerdtree'
 Plugin 'git://github.com/easymotion/vim-easymotion.git'
 Plugin 'git://github.com/vim-scripts/SearchComplete.git'
+Plugin 'git://github.com/tpope/vim-surround.git'
 "Dev plugins
 Plugin 'git://github.com/tpope/vim-endwise.git'
 Plugin 'git://github.com/ervandew/supertab.git'
