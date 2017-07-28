@@ -18,7 +18,7 @@ nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-
+map ; :
 "Save Ctrl+S
 " If the current buffer has never been saved, it will have no name,
 " " call the file browser to save it, otherwise just save it.
@@ -60,16 +60,24 @@ set path+=**
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+"UI
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+"
+"Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'git://github.com/easymotion/vim-easymotion.git'
 Plugin 'git://github.com/vim-scripts/SearchComplete.git'
+Plugin 'christoomey/vim-tmux-navigator'
+
+"Editing
 Plugin 'git://github.com/tpope/vim-surround.git'
 "Dev plugins
 Plugin 'git://github.com/tpope/vim-endwise.git'
 Plugin 'git://github.com/ervandew/supertab.git'
 Plugin 'git://github.com/vim-ruby/vim-ruby.git'
+Plugin 'tpope/vim-fugitive'
 Bundle 'skalnik/vim-vroom'
+
 " Brief help
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
