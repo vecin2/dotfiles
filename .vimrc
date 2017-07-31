@@ -34,6 +34,7 @@ map ; :
 
 "Nerdtree
 nmap <c-n> :NERDTreeToggle<CR>
+nmap <leader>f :NERDTreeFind<CR>
 autocmd VimEnter * if !argc() | NERDTree | endif
 
 syntax enable
