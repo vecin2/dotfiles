@@ -1,4 +1,6 @@
 alias ad="cd $AD/shell_tools"
+alias ccadmin="$AD/shell_tools/ccadmin.sh"
+alias gt="$AD/shell_tools/gt.sh"
 alias wss="cd $WSS/bin"
 alias mp="cd ~/dev/workspaces/RubyWeb/MyKitty/"
 alias docprj="cd $PRJ_DOCS"
