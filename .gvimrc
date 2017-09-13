@@ -8,6 +8,7 @@ autocmd User Rails let b:surround_{char2nr('-')} = "<% \r %>" " displays <% %> c
 :set cpoptions+=$ " puts a $ marker for the end of words/lines in cw/c$ commands
 :set mousemodel=popup
 
+"copy and paste like windows
 vmap <C-c> "+yi
 vmap <C-x> "+c
 vmap <C-v> c<ESC>"+p
