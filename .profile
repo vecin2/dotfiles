@@ -43,3 +43,6 @@ export ORACLE_HOME=/usr/lib/oracle/12.1/client64
 export PATH=$PATH:$ORACLE_HOME/bin 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+#disable ctrl+s so vi can use it for saving
+#stty stop '' -ixoff
+#stty -ixon

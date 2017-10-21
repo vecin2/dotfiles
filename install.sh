@@ -10,3 +10,4 @@ ln -sfv "$DOTFILES_DIR/.profile" ~
 ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.gvimrc" ~
+ln -sfv "$DOTFILES_DIR/.gvimrc" ~

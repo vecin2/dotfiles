@@ -6,6 +6,8 @@ set tags +=.git/tags
 "set relativenumber and absolute number for current line
 set rnu
 set number
+"set status line
+set statusline=2
 "remap resizing panels
 if bufwinnr(1)
 	map - <C-W>-
@@ -63,7 +65,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "UI
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-"
+
 "Navigation
 Plugin 'scrooloose/nerdtree'
 Plugin 'git://github.com/easymotion/vim-easymotion.git'
@@ -73,6 +75,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 "Editing
 Plugin 'git://github.com/tpope/vim-surround.git'
 "Dev plugins
+Plugin 'git://github.com/vim-syntastic/syntastic.git'
 Plugin 'git://github.com/tpope/vim-endwise.git'
 Plugin 'git://github.com/ervandew/supertab.git'
 Plugin 'git://github.com/vim-ruby/vim-ruby.git'
