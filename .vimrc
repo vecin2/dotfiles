@@ -35,6 +35,7 @@ so ~/.vim/config.vim
  Plugin 'git://github.com/tpope/vim-endwise.git'
  Plugin 'git://github.com/ervandew/supertab.git'
  Plugin 'git://github.com/vim-ruby/vim-ruby.git'
+ Plugin 'bash-support.vim'
  Plugin 'tpope/vim-fugitive'
  Bundle 'skalnik/vim-vroom'
 
