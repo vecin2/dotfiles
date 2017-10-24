@@ -10,7 +10,6 @@ ln -sfv "$DOTFILES_DIR/.profile" ~
 ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.gvimrc" ~
-ln -sfv "$DOTFILES_DIR/.gvimrc" ~
 
 ln -sfv "$DOTFILES_DIR/.vim/shortcuts.vim" ~/.vim/shortcuts.vim
 ln -sfv "$DOTFILES_DIR/.vim/colors.vim" ~/.vim/colors.vim
