@@ -1,1 +1,1 @@
-sudo apt-get isntall --assume-yes xclip
+sudo apt-get install --assume-yes xclip
