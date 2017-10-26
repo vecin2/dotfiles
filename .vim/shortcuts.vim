@@ -1,12 +1,12 @@
 :imap jj <Esc>
 
 "remap resizing panels
-if bufwinnr(1)
-	map - <C-W>-
-	map + <C-W>+
-	map < <C-W><
-	map > <C-W>>
-endif
+"if bufwinnr(1)
+"	map - <C-W>-
+"	map + <C-W>+
+"	map < <C-W><
+"	map > <C-W>>
+"endif
 
 "remap windows navigation keys
 nnoremap <c-h> <c-w>h
