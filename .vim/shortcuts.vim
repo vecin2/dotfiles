@@ -15,10 +15,15 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 map ; :
 
+
+ " Quick quit command
+ noremap <Leader>e :quit<CR>  " Quit current window
+ noremap <Leader>E :qa!<CR>   " Quit all windows
+
 "Save Ctrl+S
 " If the current buffer has never been saved, it will have no name,
 " " call the file browser to save it, otherwise just save it.
-command -nargs=0 -bar Update if &modified 
+command! -nargs=0 -bar Update if &modified 
 			\|    if empty(bufname('%'))
 				\|        browse confirm write
 				\|     else

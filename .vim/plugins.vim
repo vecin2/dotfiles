@@ -18,7 +18,7 @@ autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in
 "Close NT is the only window left is NERDTree
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-nnoremap <Leader>n :NERDTreeToggle<Enter>
+nnoremap <Leader>v :NERDTreeToggle<Enter>
 nnoremap <Leader>f :NERDTreeFind<Enter>
 
 "Automatically closes NT when opening  a file
@@ -28,7 +28,7 @@ let NERDTreeAutoDeleteBuffer = 1
 
 "Hide Press ? for help
 "let NERDTreeMinimalUI = 1
-let NERDTreeDirArrows = 1
+"let NERDTreeDirArrows = 1
 
 "bash-support
 "it avoid Ctrl_j clashing with changing windows

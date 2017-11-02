@@ -1,9 +1,8 @@
 set nocompatible              " be iMproved, required
-filetype plugin on                  " required
+
+
 syntax enable
 filetype plugin indent on
-
-
 
 so ~/.vim/shortcuts.vim
 so ~/.vim/colors.vim
@@ -11,6 +10,10 @@ so ~/.vim/plugins.vim
 so ~/.vim/config.vim
 
 
+
+ " Automatic reloading of .vimrc
+" autocmd! bufwritepost .vimrc source % after save the first ctrl-j navigation
+" does not work any longer
 
  set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
@@ -25,6 +28,11 @@ so ~/.vim/config.vim
  Plugin 'git://github.com/easymotion/vim-easymotion.git'
  Plugin 'git://github.com/vim-scripts/SearchComplete.git'
  Plugin 'christoomey/vim-tmux-navigator'
+ Plugin 'git://github.com/tpope/vim-projectionist.git'
+ Plugin 'git://github.com/kien/ctrlp.vim.git'
+ 
+
+
 
  "Editing
  Plugin 'git://github.com/tpope/vim-repeat.git'
@@ -38,6 +46,8 @@ so ~/.vim/config.vim
  Plugin 'bash-support.vim'
  Plugin 'tpope/vim-fugitive'
  Bundle 'skalnik/vim-vroom'
+ Plugin 'git://github.com/tpope/vim-dispatch.git'
+ 
 
  " Brief help
  " :PluginList       - lists configured plugins

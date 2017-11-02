@@ -15,7 +15,12 @@ set wildmode=longest,list
 "allow searching in subdirectories
 set path+=**
 
-set rtp+=~/.vim/bundle/Vundle.vim
+set mouse=a  "enable mouse
+set clipboard=unnamed
+
+"config for dev
+set tw=79   " width of document (used by gd)
+set noswapfile 
 
 "set status line
 function! GitBranch()
