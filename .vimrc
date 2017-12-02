@@ -1,27 +1,17 @@
 set nocompatible              " be iMproved, required
-
-
 syntax enable
 filetype plugin indent on
 
-so ~/.vim/shortcuts.vim
-so ~/.vim/colors.vim
-so ~/.vim/plugins.vim
-so ~/.vim/config.vim
-
-
-
- " Automatic reloading of .vimrc
 " autocmd! bufwritepost .vimrc source % after save the first ctrl-j navigation
 " does not work any longer
 
  set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
- Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim'
  "UI
- Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+Plugin 'git://github.com/altercation/vim-colors-solarized.git'
 
- "Navigation
+ "Search && Navigation
  Plugin 'scrooloose/nerdtree'
  Plugin 'Xuyuanp/nerdtree-git-plugin'
  Plugin 'git://github.com/terryma/vim-smooth-scroll'
@@ -30,10 +20,8 @@ so ~/.vim/config.vim
  Plugin 'christoomey/vim-tmux-navigator'
  Plugin 'git://github.com/tpope/vim-projectionist.git'
  Plugin 'git://github.com/kien/ctrlp.vim.git'
+ Plugin 'https://github.com/mileszs/ack.vim.git'
  
-
-
-
  "Editing
  Plugin 'git://github.com/tpope/vim-repeat.git'
  Plugin 'git://github.com/tpope/vim-surround.git'
@@ -55,4 +43,9 @@ so ~/.vim/config.vim
  " :PluginSearch foo - searches for foo; append `!` to refresh local cache
  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
  " see :h vundle for more details or wiki for FAQ
- call vundle#end()
+call vundle#end()
+
+so ~/.vim/shortcuts.vim
+so ~/.vim/colors.vim
+so ~/.vim/plugins.vim
+so ~/.vim/config.vim

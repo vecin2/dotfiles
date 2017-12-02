@@ -15,6 +15,9 @@ nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
 map ; :
 
+"change current folder easily
+nnoremap cd. :cd %:p:h<CR>:pwd<CR>
+
 
  " Quick quit command
  noremap <Leader>e :quit<CR>  " Quit current window

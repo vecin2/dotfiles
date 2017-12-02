@@ -6,7 +6,10 @@ set tags +=.git/tags
 "set relativenumber and absolute number for current line
 set rnu
 set number
-"
+
+"Remove backup files swp
+set nobackup nowritebackup
+
 "Allow exit buffer without saving
 set hidden
 "search by files completing like sh
@@ -17,10 +20,9 @@ set path+=**
 
 set mouse=a  "enable mouse
 set clipboard=unnamed
-
-"config for dev
-set tw=79   " width of document (used by gd)
-set noswapfile 
+"Changet current directory when opening a new file
+"set autochdir
+"set noswapfile 
 
 "set status line
 function! GitBranch()

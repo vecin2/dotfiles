@@ -30,6 +30,3 @@ let NERDTreeAutoDeleteBuffer = 1
 "let NERDTreeMinimalUI = 1
 "let NERDTreeDirArrows = 1
 
-"bash-support
-"it avoid Ctrl_j clashing with changing windows
-let g:BASH_Ctrl_j   = 'off'
