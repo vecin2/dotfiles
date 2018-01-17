@@ -5,11 +5,17 @@ filetype plugin indent on
 " autocmd! bufwritepost .vimrc source % after save the first ctrl-j navigation
 " does not work any longer
 
+
+"workaround to fix draw issue with syntastic
+autocmd VimEnter * nnoremap <silent> <c-j> :TmuxNavigateDown<cr>:redraw!<cr>
+
  set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
- "UI
+ "UI and utils
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+Plugin 'chriskempson/base16-vim'
+Plugin 'https://github.com/gioele/vim-autoswap'
 
  "Search && Navigation
  Plugin 'scrooloose/nerdtree'

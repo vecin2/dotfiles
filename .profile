@@ -20,14 +20,15 @@ fi
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
+export EDITOR=vim
 
 JAVA_HOME="/opt/installers/jdk1.8.0_121"
 #JAVA_HOME="/opt/installers/jdk1.7.0_79"
 JBOSS_HOME="/opt/containers/jboss/jboss-as-7.1.1.Final"
 WEBLOGIC_HOME="/opt/verint/verint_containers/em-appserver"
 PATH="$JAVA_HOME/bin:$PATH"
-AD="/opt/verint/verint_projects/SPEN/FP3"
-PRJ_DOCS="~/Documents/SPEN/CSO"
+AD="/opt/verint/verint_projects/SPEN/FP3_3PD"
+DOCS="~/Documents/applicationSupport"
 CONTAINER_NAME=container_ad_1
 ADPROCESSLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/process/
 ADAPPLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/application
@@ -43,3 +44,5 @@ export ORACLE_HOME=/usr/lib/oracle/12.1/client64
 export PATH=$PATH:$ORACLE_HOME/bin 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
+#rerun
+RERUN_MODULES=~/dev/bash/rerun_modules

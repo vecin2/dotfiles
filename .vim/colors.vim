@@ -1,15 +1,18 @@
 
+let base16colorspace=256  " Access colors present in 256 colorspace
+"colorscheme base16-tomorrow
  "solarized
- let g:solarized_termcolors=16      
- let g:solarized_termtrans=0       
- let g:solarized_degrade=0       
- let g:solarized_bold=1       
- let g:solarized_underline=1       
- let g:solarized_italic=1       
- let g:solarized_contrast="high"
- let g:solarized_visibility="high"
- set t_Co=16
+ "let g:solarized_termcolors=16      
+" let g:solarized_termtrans=0       
+" let g:solarized_degrade=0       
+" let g:solarized_bold=1       
+" let g:solarized_underline=1       
+" let g:solarized_italic=1       
+" let g:solarized_contrast="high"
+" let g:solarized_visibility="high"
+" "set t_Co=16
  set background=dark
  colorscheme solarized
+ "colorscheme base16-codeschool
  "highlight with underline
  "highlight! link visual cursorline
