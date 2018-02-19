@@ -12,11 +12,13 @@ set nobackup nowritebackup
 
 "Allow exit buffer without saving
 set hidden
+"
 "search by files completing like sh
 set wildmode=longest,list 
-
 "allow searching in subdirectories
 set path+=**
+"hilight searched term
+set hlsearch
 
 set mouse=a  "enable mouse
 set clipboard=unnamed

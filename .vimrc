@@ -2,6 +2,7 @@ set nocompatible              " be iMproved, required
 syntax enable
 filetype plugin indent on
 
+
 " autocmd! bufwritepost .vimrc source % after save the first ctrl-j navigation
 " does not work any longer
 
@@ -16,6 +17,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'git://github.com/altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 Plugin 'https://github.com/gioele/vim-autoswap'
+"allows window highlighting
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'https://github.com/blueyed/vim-diminactive'
 
  "Search && Navigation
  Plugin 'scrooloose/nerdtree'
