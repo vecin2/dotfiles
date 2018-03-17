@@ -9,33 +9,36 @@ filetype plugin indent on
 
 "workaround to fix draw issue with syntastic
 autocmd VimEnter * nnoremap <silent> <c-j> :TmuxNavigateDown<cr>:redraw!<cr>
+"Allows to paste text copid in Vim after exit vim
+autocmd VimLeave * call system("xclip -o | xclip -selection c")
 
  set rtp+=~/.vim/bundle/Vundle.vim
  call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
- "UI and utils
-Plugin 'git://github.com/altercation/vim-colors-solarized.git'
-Plugin 'chriskempson/base16-vim'
-Plugin 'https://github.com/gioele/vim-autoswap'
-"allows window highlighting
-Plugin 'tmux-plugins/vim-tmux-focus-events'
-Plugin 'https://github.com/blueyed/vim-diminactive'
+ Plugin 'VundleVim/Vundle.vim'
+ " "UI and utils
+ Plugin 'git://github.com/altercation/vim-colors-solarized.git'
+ Plugin 'chriskempson/base16-vim'
+ Plugin 'https://github.com/gioele/vim-autoswap'
+ "allows window highlighting
+ Plugin 'tmux-plugins/vim-tmux-focus-events'
+ Plugin 'https://github.com/blueyed/vim-diminactive'
 
  "Search && Navigation
  Plugin 'scrooloose/nerdtree'
+ Plugin 'git://github.com/ivalkeen/nerdtree-execute.git'
  Plugin 'Xuyuanp/nerdtree-git-plugin'
  Plugin 'git://github.com/terryma/vim-smooth-scroll'
  Plugin 'git://github.com/easymotion/vim-easymotion.git'
- Plugin 'git://github.com/vim-scripts/SearchComplete.git'
  Plugin 'christoomey/vim-tmux-navigator'
  Plugin 'git://github.com/tpope/vim-projectionist.git'
  Plugin 'git://github.com/kien/ctrlp.vim.git'
  Plugin 'https://github.com/mileszs/ack.vim.git'
- 
+ Plugin 'git://github.com/bronson/vim-visual-star-search.git'
+
  "Editing
  Plugin 'git://github.com/tpope/vim-repeat.git'
  Plugin 'git://github.com/tpope/vim-surround.git'
-
+ Plugin 'git://github.com/tommcdo/vim-exchange.git'
  "Dev plugins
  Plugin 'git://github.com/vim-syntastic/syntastic.git'
  Plugin 'git://github.com/tpope/vim-endwise.git'
