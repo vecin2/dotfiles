@@ -1,5 +1,5 @@
 #verint
-alias ad="cd $AD/shell_tools"
+#alias ad="cd $AD/shell_tools"
 alias ccadmin="$AD/shell_tools/ccadmin.sh"
 alias wss="cd $WSS/bin"
 alias tdocs="cd $DOCS"

@@ -20,12 +20,15 @@ set path+=**
 "hilight searched term
 set hlsearch
 
+
+
+
 set mouse=a  "enable mouse
 set clipboard=unnamed
 "Changet current directory when opening a new file
 "set autochdir
 "set noswapfile 
-
+"
 "set status line
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -52,6 +55,8 @@ set statusline+=\ %l:%c
 set statusline+=\
 
 "FORMATTING
+command! -nargs=* Wrap set wrap linebreak nolist
+Wrap
 "Setting tabs Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()

@@ -18,6 +18,10 @@ map ; :
 "change current folder easily
 nnoremap cd. :cd %:p:h<CR>:pwd<CR>
 
+nnoremap <Leader>kl :e ~/Documents/kana/kanaLinks.txt<CR> "Edit kanaLinks
+nnoremap <Leader>pl :e ~/Documents/personal/links.txt<CR> "Edit personalLinks
+nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR> "Edit personalLinks
+nnoremap <Leader>uv :e ~/Documents/kana/usefulviews.sql<CR> "Edit personalLinks
 
  " Quick quit command
  noremap <Leader>e :quit<CR>  " Quit current window
@@ -51,3 +55,12 @@ function! s:ZoomToggle() abort
 endfunction
 command!  ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-w>z :ZoomToggle<CR>
+
+"Bubble single lines
+map <ESC>[1;5A <C-Up>
+map <ESC>[1;5B <C-Down>
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+"Buble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]

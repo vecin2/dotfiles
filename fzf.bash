@@ -41,3 +41,47 @@ fkill() {
 		echo $pid | xargs kill -${1:-9}
 	fi
 }
+
+fe() {
+	local files
+	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
+	[[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
+}
+
+
+cf() {
+	local file
+
+	file="$(locate -Ai -0 $@ | grep -z -vE '~$' | fzf --read0 -0 -1)"
+
+	if [[ -n $file ]]
+	then
+		if [[ -d $file ]]
+		then
+			cd -- $file
+		else
+			cd -- ${file:h}
+		fi
+	fi
+}
+ft(){
+	local dest_bookmark=$(cdscuts_glob_echo | fzf )
+	#extract path from line choose
+	if [[ $dest_bookmark != '' ]]; then
+		local dest_dir="/${dest_bookmark#*/}";
+		cd "$dest_dir"
+	fi
+}
+#print all bookmards to feed fzf
+function cdscuts_glob_echo {
+   source $SDIRS
+   env | grep "^DIR_" | cut -c5- | sort |grep "^.*=" | sed 's/=/\t\t/g'
+}
+
+fg(){
+	grep --line-buffered --color=never -r "" * | fzf
+
+	# with ag - respects .agignore and .gitignore
+	#ack --nobreak --nonumbers --noheading . | fzf
+	ack . | fzf
+}

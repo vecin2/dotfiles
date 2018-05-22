@@ -1,3 +1,13 @@
+"Vimux key bindings
+map <Leader>vp :VimuxPromptCommand<CR>
+map <Leader>vl :VimuxRunLastCommand<CR>
+map <Leader>vi :VimuxInspectRunner<CR>
+map <Leader>vz :VimuxZoomRunner<CR>
+
+"Arpeggio key bindings
+call arpeggio#load()  
+Arpeggiomap vl <leader>vl
+
 "Scrall smoth
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
 noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<CR>
