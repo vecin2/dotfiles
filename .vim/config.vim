@@ -9,7 +9,7 @@ set number
 
 "Remove backup files swp
 set nobackup nowritebackup
-
+"
 "Allow exit buffer without saving
 set hidden
 "
@@ -28,7 +28,7 @@ set clipboard=unnamed
 "Changet current directory when opening a new file
 "set autochdir
 "set noswapfile 
-"
+""
 "set status line
 function! GitBranch()
     return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
@@ -38,10 +38,10 @@ function! StatuslineGit()
     let l:branchname = GitBranch()
     return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
 endfunction
-
+"
 set statusline=
 set statusline+=%#PmenuSel#
-set statusline+=%{StatuslineGit()}
+"set statusline+=%{StatuslineGit()}
 set statusline+=%#LineNr#
 set statusline+=\ %f
 set statusline+=%m\
