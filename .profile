@@ -15,44 +15,35 @@ if [ -n "$BASH_VERSION" ]; then
 	. "$HOME/.bashrc"
     fi
 fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 export EDITOR=vim
 
-JAVA_HOME="/opt/installers/jdk1.8.0_161"
-#JAVA_HOME="/opt/installers/jdk1.7.0_79"
-JBOSS_HOME="/opt/containers/jboss/jboss-as-7.1.1.Final"
-WEBLOGIC_HOME="/opt/verint/verint_containers/em-appserver"
+JAVA_HOME="/c/em/installers/Java/jdk1.8.0_171"
 PATH="$HOME/.local/bin:$JAVA_HOME/bin:$PATH"
-
-
-[ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load RVM into a shell session *as a function*
-AD="/opt/em/projects/ootb-15.3-fp2"
-DOCS="/home/dgarcia/Documents/applicationSupport"
-CONTAINER_NAME=container_ad_1
-ADPROCESSLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/process/
-ADAPPLOGS=$AD/logs/localhost-$CONTAINER_NAME/cre/session/application
-ADSERVERLOGS=$AD/logs/localhost-$CONTAINER_NAME/jboss
-
-#WSS="/opt/em/projects/prudential/MCCS/WebSelfService/trunk"
 export JAVA_HOME
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-export AD ADPROCESSLOGS ADAPPLOGS ADSERVERLOGS WSS WEBLOGIC_HOME DOCS
-export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-export ORACLE_HOME=/usr/lib/oracle/12.1/client64
-export PATH=$PATH:$ORACLE_HOME/bin 
-#export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
-[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-source $HOME/dev/bash/rerun/etc/bash_completion.sh
-#Bookmarks
-. $HOME/.local/bin/bashmarks.sh 
 
 #rerun
 export RERUN_MODULES=$HOME/dev/bash/rerun/modules
 export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
+source $HOME/dev/bash/rerun/etc/bash_completion.sh
+#export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
+
+[ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load RVM into a shell session *as a function*
+
+#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+#[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+#export AD ADPROCESSLOGS ADAPPLOGS ADSERVERLOGS WSS WEBLOGIC_HOME DOCS
+#export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+#export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+#export PATH=$PATH:$ORACLE_HOME/bin 
+
+#Bookmarks
+. $HOME/.local/bin/bashmarks.sh 
+
 google() {
 	search=""
 	echo "Googling: $@"
@@ -65,4 +56,4 @@ google() {
 #python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/Devel
-source $HOME/.local/bin/virtualenvwrapper.sh
+#source $HOME/.local/bin/virtualenvwrapper.sh

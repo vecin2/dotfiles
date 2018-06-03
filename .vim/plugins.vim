@@ -37,6 +37,6 @@ nnoremap <Leader>f :NERDTreeFind<Enter>
 let NERDTreeAutoDeleteBuffer = 1
 
 "Hide Press ? for help
-"let NERDTreeMinimalUI = 1
-"let NERDTreeDirArrows = 1
+let NERDTreeMinimalUI = 1
+let NERDTreeDirArrows = 1
 

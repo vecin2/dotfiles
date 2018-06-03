@@ -7,6 +7,9 @@ set tags +=.git/tags
 set rnu
 set number
 
+"mark white spaces
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+ 
 "Remove backup files swp
 set nobackup nowritebackup
 "

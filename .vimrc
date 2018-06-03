@@ -59,6 +59,7 @@ Plugin 'https://github.com/ervandew/supertab.git'
 "Plugin 'tpope/vim-fugitive'
 "Bundle 'skalnik/vim-vroom'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
+Bundle 'Valloric/YouCompleteMe'
  
 
  " Brief help
