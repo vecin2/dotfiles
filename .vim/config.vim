@@ -15,13 +15,17 @@ set nobackup nowritebackup
 "
 "Allow exit buffer without saving
 set hidden
-"
+
+"SEARCHING
 "search by files completing like sh
 set wildmode=longest,list 
 "allow searching in subdirectories
 set path+=**
-"hilight searched term
+" hilight searched term
 set hlsearch
+"Allows vim to use ag with ack plugin
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nmap <leader>a <Esc>:Ack! 
 
 
 

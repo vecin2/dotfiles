@@ -1,19 +1,16 @@
+let mapleader="\<Space>"
+"Global shorcuts
 :imap jj <Esc>
-
-"remap resizing panels
-"if bufwinnr(1)
-"	map - <C-W>-
-"	map + <C-W>+
-"	map < <C-W><
-"	map > <C-W>>
-"endif
+map ; :
 
 "remap windows navigation keys
 nnoremap <c-h> <c-w>h
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
 nnoremap <c-l> <c-w>l
-map ; :
+
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <Leader>c :nohl<CR><C-l>
 
 "change current folder easily
 nnoremap cd. :cd %:p:h<CR>:pwd<CR>
@@ -56,6 +53,10 @@ endfunction
 command!  ZoomToggle call s:ZoomToggle()
 nnoremap <silent> <C-w>z :ZoomToggle<CR>
 
+"Change window size
+nnoremap <silent> <Leader>> :vertical resize +5<CR>
+nnoremap <silent> <Leader>< :vertical resize -5<CR>
+
 "Bubble single lines
 map <ESC>[1;5A <C-Up>
 map <ESC>[1;5B <C-Down>
@@ -64,3 +65,12 @@ nmap <C-Down> ddp
 "Buble multiple lines
 vmap <C-Up> xkP`[V`]
 vmap <C-Down> xp`[V`]
+
+"remap resizing panels
+"if bufwinnr(1)
+"	map - <C-W>-
+"	map + <C-W>+
+"	map < <C-W><
+"	map > <C-W>>
+"endif
+

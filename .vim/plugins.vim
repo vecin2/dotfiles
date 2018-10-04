@@ -1,3 +1,10 @@
+"FZF shorcuts +Ack with AG
+nnoremap <leader>g :Ag<CR>
+nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
+nnoremap <leader>b :Buffers<CR>
+nnoremap <Leader>t :Files<CR>
+nnoremap <Leader>r :Tags<CR>
+
 "Vimux key bindings
 map <Leader>vp :VimuxPromptCommand<CR>
 map <Leader>vl :VimuxRunLastCommand<CR>
@@ -6,7 +13,10 @@ map <Leader>vz :VimuxZoomRunner<CR>
 
 "Arpeggio key bindings
 call arpeggio#load()  
-Arpeggiomap vl <leader>vl
+"VimuxRunLastCommnad
+Arpeggiomap vl <leader>vl 
+"Search in project for word under the test
+Arpeggiomap aj <leader>ag 
 
 "Scrall smoth
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>

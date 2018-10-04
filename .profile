@@ -21,7 +21,7 @@ if [ -d "$HOME/bin" ] ; then
 fi
 export EDITOR=vim
 
-JAVA_HOME="/c/em/installers/Java/jdk1.8.0_171"
+JAVA_HOME="/opt/installers/jdk1.8.0_161"
 PATH="$HOME/.local/bin:$JAVA_HOME/bin:$PATH"
 export JAVA_HOME
 
@@ -31,7 +31,8 @@ export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
 source $HOME/dev/bash/rerun/etc/bash_completion.sh
 #export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
 
-[ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load RVM into a shell session *as a function*
+[ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load EM into a shell session *as a function*
+export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templates"
 
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -55,5 +56,8 @@ google() {
 
 #python
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/Devel
-#source $HOME/.local/bin/virtualenvwrapper.sh
+export PROJECT_HOME=$HOME/dev/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+source $HOME/.local/bin/virtualenvwrapper.sh
+export TERM=screen-256color-bce
+
