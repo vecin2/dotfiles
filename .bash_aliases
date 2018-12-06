@@ -8,4 +8,5 @@ alias trr="cd ~/dev/bash/rerun"
 
 #tmuxinator
 alias mux=tmuxinator
+alias ag="ag --color-path '36;1' --color-line-number '1;35'" 
 stty -ixon

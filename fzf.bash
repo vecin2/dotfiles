@@ -50,12 +50,6 @@ fkill() {
 	fi
 }
 
-fe() {
-	local files
-	IFS=$'\n' files=($(fzf-tmux --query="$1" --multi --select-1 --exit-0))
-	[[ -n "$files" ]] && ${EDITOR:-vim} "${files[@]}"
-}
-
 
 cf() {
 	local file
@@ -72,6 +66,7 @@ cf() {
 		fi
 	fi
 }
+
 ft(){
 	local dest_bookmark=$(cdscuts_glob_echo | fzf )
 	#extract path from line choose
@@ -87,9 +82,12 @@ function cdscuts_glob_echo {
 }
 
 fg(){
-	grep --line-buffered --color=never -r "" * | fzf
+  local file
 
-	# with ag - respects .agignore and .gitignore
-	#ack --nobreak --nonumbers --noheading . | fzf
-	ack . | fzf
+  file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
+
+  if [[ -n $file ]]
+  then
+     vim $file
+  fi
 }
