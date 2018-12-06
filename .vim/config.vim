@@ -1,66 +1,3 @@
-" Always show 5 lines between current cursor line and top or bottom line
-"set status line
-set laststatus=2
-set scrolloff=5   
-set tags +=.git/tags
-"set relativenumber and absolute number for current line
-set rnu
-set number
-
-"mark white spaces
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
- 
-"Remove backup files swp
-set nobackup nowritebackup
-"
-"Allow exit buffer without saving
-set hidden
-
-"SEARCHING
-"search by files completing like sh
-set wildmode=longest,list 
-"allow searching in subdirectories
-set path+=**
-" hilight searched term
-set hlsearch
-"Allows vim to use ag with ack plugin
-let g:ackprg = 'ag --nogroup --nocolor --column'
-nmap <leader>a <Esc>:Ack! 
-
-
-
-
-set mouse=a  "enable mouse
-set clipboard=unnamed
-"Changet current directory when opening a new file
-"set autochdir
-"set noswapfile 
-""
-"set status line
-function! GitBranch()
-    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
-endfunction
-
-function! StatuslineGit()
-    let l:branchname = GitBranch()
-    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
-endfunction
-"
-set statusline=
-set statusline+=%#PmenuSel#
-"set statusline+=%{StatuslineGit()}
-set statusline+=%#LineNr#
-set statusline+=\ %f
-set statusline+=%m\
-set statusline+=%=
-set statusline+=%#CursorColumn#
-set statusline+=\ %y
-set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
-set statusline+=\[%{&fileformat}\]
-set statusline+=\ %p%%
-set statusline+=\ %l:%c
-set statusline+=\
-
 "FORMATTING
 command! -nargs=* Wrap set wrap linebreak nolist
 Wrap
@@ -91,3 +28,78 @@ function! SummarizeTabs()
         echohl None
     endtry
 endfunction
+
+"""""""WHILE CODING""""""
+set tags +=.git/tags
+"mark white spaces
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+"Line added before autcmd run as it gives and error when opening .py
+"files because BadWhitespace does not exist
+:highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
+
+ 
+"Remove backup files swp
+set nobackup nowritebackup
+"""""""NAVIGATING"""""""
+"Allow exit buffer without saving
+set hidden
+
+" Folding based on indentation:
+set foldmethod=indent
+set nofoldenable
+nnoremap , za
+
+" Always show 5 lines between current cursor line and top or bottom line
+set scrolloff=5   
+
+"set relativenumber and absolute number for current line
+set rnu
+set number
+
+
+""""SEARCHING""""
+"search by files completing like sh
+set wildmode=longest,list 
+"allow searching in subdirectories
+set path+=**
+" hilight searched term
+set hlsearch
+"Allows vim to use ag with ack plugin
+let g:ackprg = 'ag --nogroup --nocolor --column'
+nmap <leader>a <Esc>:Ack! 
+
+
+""""CONTROLS
+set mouse=a  "enable mouse
+set clipboard=unnamed
+
+""""""""STATUS LINE"""""""""
+"Display status line always
+set laststatus=2
+function! GitBranch()
+    return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+    let l:branchname = GitBranch()
+    return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+"
+set statusline=
+set statusline+=%#PmenuSel#
+"set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=\ %{&fileencoding?&fileencoding:&encoding}
+set statusline+=\[%{&fileformat}\]
+set statusline+=\ %p%%
+set statusline+=\ %l:%c
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+set statusline+=\
+
