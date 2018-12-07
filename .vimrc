@@ -6,7 +6,7 @@ filetype plugin indent on
 "autocmd VimEnter * command! -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path "33;1"', fzf#vim#default_layout)
 "set t_ZH=[3m
 "set t_ZR=[23m
-set termguicolors
+"set termguicolors
 colorscheme base16-gruvbox-dark-medium
 highlight Comment cterm=italic
 
