@@ -1,6 +1,5 @@
 "FORMATTING
 command! -nargs=* Wrap set wrap linebreak nolist
-Wrap
 "Setting tabs Set tabstop, softtabstop and shiftwidth to the same value
 command! -nargs=* Stab call Stab()
 function! Stab()
@@ -31,6 +30,8 @@ endfunction
 
 """""""WHILE CODING""""""
 set tags +=.git/tags
+"It defaults diff splits to be vertical
+set diffopt+=vertical
 "mark white spaces
 au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 "Line added before autcmd run as it gives and error when opening .py

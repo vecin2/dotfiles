@@ -37,10 +37,10 @@ export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templa
 #export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 #[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-#export AD ADPROCESSLOGS ADAPPLOGS ADSERVERLOGS WSS WEBLOGIC_HOME DOCS
-#export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-#export ORACLE_HOME=/usr/lib/oracle/12.1/client64
-#export PATH=$PATH:$ORACLE_HOME/bin 
+# Needed to allow cx_Oracle python library run DB queries
+export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+export PATH=$PATH:$ORACLE_HOME/bin 
 
 #Bookmarks
 . $HOME/.local/bin/bashmarks.sh 
