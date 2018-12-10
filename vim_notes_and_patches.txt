@@ -1,0 +1,7 @@
+#Steps when update vim:
+vi .
+PluginUpdate
+#The colors can not be seen properly so we had to change then:
+695: return call('fzf#vim#grep', extend(['ag --color-path "36;1" --color-line "35;1" --nogroup --column --color'.a:command_suffix, 1], a:000))
+/home/dgarcia/.vim/bundle/YouCompleteMe/install.sh
+
