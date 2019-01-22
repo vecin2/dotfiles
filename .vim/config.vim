@@ -1,6 +1,20 @@
-"FORMATTING
-command! -nargs=* Wrap set wrap linebreak nolist
-"Setting tabs Set tabstop, softtabstop and shiftwidth to the same value
+"Colors {{{
+colorscheme base16-gruvbox-dark-medium
+"colorscheme blackboard
+"highlight Comment cterm=italic
+"}}}
+
+
+"To Remove or to Categorize... {{{
+"Not sure what issue they fix
+"map OA <up>
+"map OB <down>
+"map OC <right>
+"map OD <left>
+""}}}
+
+
+"Setting tabs Set tabstop, softtabstop and shiftwidth to the same value {{{
 command! -nargs=* Stab call Stab()
 function! Stab()
     let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
@@ -27,38 +41,60 @@ function! SummarizeTabs()
         echohl None
     endtry
 endfunction
+" }}}
 
-"""""""WHILE CODING""""""
+"Coding settings {{{
 set tags +=.git/tags
 "It defaults diff splits to be vertical
 set diffopt+=vertical
 "mark white spaces
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+augroup whitespace
+	autocmd!
+	au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+augroup END
 "Line added before autcmd run as it gives and error when opening .py
 "files because BadWhitespace does not exist
 :highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
+" }}}
 
- 
+"Vimscript file setting ----- {{{
+augroup filetype_vim
+	autocmd!
+	autocmd FileType vim setlocal foldmethod=marker
+augroup END
+" }}}
+
+"Editing settings {{{
+"Allows to paste text copied from Vim after exit vim
+autocmd VimLeave * call system("xclip -o | xclip -selection c")
+
+"}}}
+
+"""Navigating docs {{{
+
 "Remove backup files swp
 set nobackup nowritebackup
-"""""""NAVIGATING"""""""
 "Allow exit buffer without saving
 set hidden
-
-" Folding based on indentation:
-set foldmethod=indent
-set nofoldenable
-nnoremap , za
-
+"
 " Always show 5 lines between current cursor line and top or bottom line
 set scrolloff=5   
 
 "set relativenumber and absolute number for current line
 set rnu
 set number
+" }}}
 
 
-""""SEARCHING""""
+" Folding {{{
+" Folding based on indentation:
+set foldmethod=indent
+set nofoldenable
+nnoremap , za
+" }}}
+
+
+"Searching {{{
 "search by files completing like sh
 set wildmode=longest,list 
 "allow searching in subdirectories
@@ -68,13 +104,15 @@ set hlsearch
 "Allows vim to use ag with ack plugin
 let g:ackprg = 'ag --nogroup --nocolor --column'
 nmap <leader>a <Esc>:Ack! 
+"}}}
 
 
-""""CONTROLS
+"Controls {{{
 set mouse=a  "enable mouse
 set clipboard=unnamed
+" }}}
 
-""""""""STATUS LINE"""""""""
+"Status Line {{{
 "Display status line always
 set laststatus=2
 function! GitBranch()
@@ -103,4 +141,5 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 set statusline+=\
+"}}}
 

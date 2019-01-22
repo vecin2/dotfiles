@@ -1,20 +1,19 @@
 let mapleader="\<Space>"
+
 "Global shorcuts
-:imap jj <Esc>
-map ; :
+:inoremap jj <Esc>
+":inoremap <Esc> <nop>
+noremap ; :
+noremap : <nop>
 
-"remap windows navigation keys
-nnoremap <c-h> <c-w>h
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-nnoremap <c-l> <c-w>l
-
-"allow mouse to resize windows when running within tmux
+""allow mouse to resize windows when running within tmux
 set ttymouse=xterm2
 set mouse=a
 
+
 " <Ctrl-l> redraws the screen and removes any search highlighting.
 nnoremap <silent> <Leader>c :nohl<CR><C-l>
+
 
 "change current folder easily
 nnoremap cd. :lcd %:p:h<CR>:pwd<CR> 

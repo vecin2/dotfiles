@@ -61,3 +61,5 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
 source $HOME/.local/bin/virtualenvwrapper.sh
 export TERM=screen-256color-bce
 
+#autocomplation for fasd
+eval "$(fasd --init auto)"

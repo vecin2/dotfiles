@@ -2,34 +2,11 @@ set nocompatible              " be iMproved, required
 syntax enable
 filetype plugin indent on
 
-" Redefine :Ag command
-"autocmd VimEnter * command! -nargs=* Ag call fzf#vim#ag(<q-args>, '--color-path "33;1"', fzf#vim#default_layout)
-"set t_ZH=[3m
-"set t_ZR=[23m
-"set termguicolors
-colorscheme base16-gruvbox-dark-medium
-highlight Comment cterm=italic
-
-"Not sure what issue they fix
-map OA <up>
-map OB <down>
-map OC <right>
-map OD <left>
 
 
-" autocmd! bufwritepost .vimrc source % after save the first ctrl-j navigation
-" does not work any longer
-if has("autocmd")
-	autocmd bufwritepost vimrc,config.vim,shortcuts.vim,colors.vim,plugins.vim source $MYVIMRC
-endif
 
 
-"workaround to fix draw issue with syntastic
-autocmd VimEnter * nnoremap <silent> <c-j> :TmuxNavigateDown<cr>:redraw!<cr>
-"
-"Allows to paste text copied from Vim after exit vim
-autocmd VimLeave * call system("xclip -o | xclip -selection c")
-
+"bundle Plugins {{{
 set rtp+=~/.vim/bundle/Vundle.vim,~/.fzf
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
@@ -78,8 +55,6 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
- 
-
  " Brief help
  " :PluginList       - lists configured plugins
  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
@@ -87,9 +62,16 @@ Plugin 'https://github.com/ervandew/supertab.git'
  " :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
  " see :h vundle for more details or wiki for FAQ
 call vundle#end()
+"}}}
 
+
+" Source vim config when save {{{
+augroup sourcevim
+	autocmd!
+	autocmd bufwritepost vimrc,config.vim,shortcuts.vim,plugins.vim source $MYVIMRC
+augroup END
+" }}}
 so ~/.vim/shortcuts.vim
-so ~/.vim/colors.vim
 so ~/.vim/plugins.vim
 so ~/.vim/config.vim
 
