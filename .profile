@@ -62,4 +62,4 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 export TERM=screen-256color-bce
 
 #autocomplation for fasd
-eval "$(fasd --init auto)"
+#eval "$(fasd --init auto)"

@@ -71,7 +71,7 @@ augroup sourcevim
 	autocmd bufwritepost vimrc,config.vim,shortcuts.vim,plugins.vim source $MYVIMRC
 augroup END
 " }}}
-so ~/.vim/shortcuts.vim
-so ~/.vim/plugins.vim
+"so ~/.vim/shortcuts.vim
 so ~/.vim/config.vim
+so ~/.vim/plugins.vim
 

@@ -4,45 +4,6 @@ colorscheme base16-gruvbox-dark-medium
 "highlight Comment cterm=italic
 "}}}
 
-
-"To Remove or to Categorize... {{{
-"Not sure what issue they fix
-"map OA <up>
-"map OB <down>
-"map OC <right>
-"map OD <left>
-""}}}
-
-
-"Setting tabs Set tabstop, softtabstop and shiftwidth to the same value {{{
-command! -nargs=* Stab call Stab()
-function! Stab()
-    let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
-    if l:tabstop > 0
-        let &l:sts = l:tabstop
-        let &l:ts = l:tabstop
-        let &l:sw = l:tabstop
-    endif
-    call SummarizeTabs()
-endfunction
-
-function! SummarizeTabs()
-    try
-        echohl ModeMsg
-        echon 'tabstop='.&l:ts
-        echon ' shiftwidth='.&l:sw
-        echon ' softtabstop='.&l:sts
-        if &l:et
-            echon ' expandtab'
-        else
-            echon ' noexpandtab'
-        endif
-    finally
-        echohl None
-    endtry
-endfunction
-" }}}
-
 "Coding settings {{{
 set tags +=.git/tags
 "It defaults diff splits to be vertical
@@ -57,6 +18,11 @@ augroup END
 :highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
 " }}}
 
+"Python settings{{{
+augroup filetype_py
+	autocmd!
+	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skip
+"}}}
 "Vimscript file setting ----- {{{
 augroup filetype_vim
 	autocmd!
@@ -64,35 +30,12 @@ augroup filetype_vim
 augroup END
 " }}}
 
-"Editing settings {{{
-"Allows to paste text copied from Vim after exit vim
-autocmd VimLeave * call system("xclip -o | xclip -selection c")
-
-"}}}
-
-"""Navigating docs {{{
-
-"Remove backup files swp
-set nobackup nowritebackup
-"Allow exit buffer without saving
-set hidden
-"
-" Always show 5 lines between current cursor line and top or bottom line
-set scrolloff=5   
-
-"set relativenumber and absolute number for current line
-set rnu
-set number
-" }}}
-
-
 " Folding {{{
 " Folding based on indentation:
 set foldmethod=indent
 set nofoldenable
 nnoremap , za
 " }}}
-
 
 "Searching {{{
 "search by files completing like sh
@@ -106,10 +49,22 @@ let g:ackprg = 'ag --nogroup --nocolor --column'
 nmap <leader>a <Esc>:Ack! 
 "}}}
 
-
-"Controls {{{
-set mouse=a  "enable mouse
+"Clipboard settings {{{
+"Allows to paste text copied from Vim after exit vim
+autocmd VimLeave * call system("xclip -o | xclip -selection c")
 set clipboard=unnamed
+"}}}
+
+"""Navigating docs {{{
+"Remove backup files swp
+set nobackup nowritebackup
+"Allow exit buffer without saving
+set hidden
+" Always show 5 lines between current cursor line and top or bottom line
+set scrolloff=5   
+"set relativenumber and absolute number for current line
+set rnu
+set number
 " }}}
 
 "Status Line {{{
@@ -143,3 +98,116 @@ set statusline+=%*
 set statusline+=\
 "}}}
 
+"To Remove or to Categorize... {{{
+"Not sure what issue they fix
+"map OA <up>
+"map OB <down>
+"map OC <right>
+"map OD <left>
+"}}}
+
+"Mouse config {{{
+set mouse=a  "enable mouse
+set ttymouse=xterm2
+" }}}
+
+"Global Remaps{{{
+let mapleader="\<Space>"
+:inoremap jk <Esc>
+:vnoremap jk <Esc>
+:inoremap <Esc> <nop>
+noremap ; :
+noremap : <nop>
+"}}}
+
+"Other Vim remaps {{{
+"To allow NERDTREE delete a buffer without exiting window
+nnoremap \d :bp<cr>:bd! #<cr>
+" <Ctrl-l> redraws the screen and removes any search highlighting.
+nnoremap <silent> <Leader>c :nohl<CR><C-l>
+"Change root dir to current
+nnoremap cd. :lcd %:p:h<CR>:pwd<CR> 
+"Change window size
+nnoremap <silent> <Leader>> :vertical resize +5<CR>
+nnoremap <silent> <Leader>< :vertical resize -5<CR>
+"}}}
+
+""" Ctrl+S {{{
+" If the current buffer has never been saved, it will have no name,
+" " call the file browser to save it, otherwise just save it.
+command! -nargs=0 -bar Update if &modified 
+			\|    if empty(bufname('%'))
+				\|        browse confirm write
+				\|     else
+					\|        confirm write
+				\|     endif 
+				\|endif 
+"Ctrl+s Save
+nnoremap <silent><C-S> :<C-u>Update<CR>
+inoremap <c-s> <Esc>:Update<CR>
+" }}}
+
+" Ctrl+z Zoom / Restore window {{{
+function! s:ZoomToggle() abort
+	if exists('t:zoomed') && t:zoomed
+		execute t:zoom_winrestcmd
+		let t:zoomed = 0
+	else
+		let t:zoom_winrestcmd = winrestcmd()
+		resize
+		vertical resize
+		let t:zoomed = 1
+	endif
+endfunction
+command!  ZoomToggle call s:ZoomToggle()
+nnoremap <silent> <C-w>z :ZoomToggle<CR>
+"}}}
+
+"Ctrl+UP(Down) -Bubble single lines{{{
+map <ESC>[1;5A <C-Up>
+map <ESC>[1;5B <C-Down>
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+"Buble multiple lines
+vmap <C-Up> xkP`[V`]
+vmap <C-Down> xp`[V`]
+"}}}
+
+"Setting tabs Set tabstop, softtabstop and shiftwidth to the same value {{{
+command! -nargs=* Stab call Stab()
+function! Stab()
+    let l:tabstop = 1 * input('set tabstop = softtabstop = shiftwidth = ')
+    if l:tabstop > 0
+        let &l:sts = l:tabstop
+        let &l:ts = l:tabstop
+        let &l:sw = l:tabstop
+    endif
+    call SummarizeTabs()
+endfunction
+
+function! SummarizeTabs()
+    try
+        echohl ModeMsg
+        echon 'tabstop='.&l:ts
+        echon ' shiftwidth='.&l:sw
+        echon ' softtabstop='.&l:sts
+        if &l:et
+            echon ' expandtab'
+        else
+            echon ' noexpandtab'
+        endif
+    finally
+        echohl None
+    endtry
+endfunction
+" }}}
+
+" Shorcuts to main docs {{{
+nnoremap <Leader>kl :e ~/Documents/kana/kanaLinks.txt<CR> 
+nnoremap <Leader>pl :e ~/Documents/personal/links.txt<CR> 
+nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR> 
+nnoremap <Leader>uv :e ~/Documents/kana/usefulviews.sql<CR> 
+nnoremap <Leader>mv :e $MYVIMRC<CR> "Edit MYVIMRC
+nnoremap <Leader>mc :e ~/.vim/config.vim<CR> "Edit MYVIMRC
+nnoremap <Leader>pn :e $EM_CORE_HOME/docs/notes.txt<CR> 
+"}}}

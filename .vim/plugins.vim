@@ -1,4 +1,4 @@
-""Arpeggio initialization {{{
+"Arpeggio initialization {{{
 call arpeggio#load()
 " }}}
 
@@ -27,11 +27,14 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
 let g:ycm_confirm_extra_conf=0
+
+"Solve error when sourcing files in bash files
+let g:syntastic_sh_shellcheck_args = "-x"
+
 let g:syntastic_mode_map = {
     \ "mode": "active",
-    \ "passive_filetypes": ["xml","java"] }
+    \ "passive_filetypes": ["xml","java","sh"] }
 
 "workaround to fix draw issue with syntastic
 "augroup redrawfix
@@ -42,13 +45,12 @@ let g:syntastic_mode_map = {
 "}}}
 
 "Vimux {{{
-map <Leader>vp :VimuxPromptCommand<CR>
-map <Leader>vl :VimuxRunLastCommand<CR>
-map <Leader>vi :VimuxInspectRunner<CR>
-map <Leader>vz :VimuxZoomRunner<CR>
+noremap <Leader>vp :VimuxPromptCommand<CR>
+noremap <Leader>vl :VimuxRunLastCommand<CR>
+noremap <Leader>vi :VimuxInspectRunner<CR>
+noremap <Leader>vz :VimuxZoomRunner<CR>
 Arpeggiomap vl <leader>vl
 "}}}
-
 
 "Scroll smooth{{{
 noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<CR>
@@ -71,8 +73,6 @@ augroup nerdtree
 	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 augroup END
 
-"To allow NERDTREE delete a buffer without exiting window
-nnoremap \d :bp<cr>:bd #<cr>
 "Use Arpeggio
 Arpeggiomap bd \d
 nnoremap <Leader>v :NERDTreeToggle<Enter>
