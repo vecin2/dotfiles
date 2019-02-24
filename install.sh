@@ -12,6 +12,7 @@ ln -sfv "$DOTFILES_DIR/.tmux.conf" ~
 ln -sfv "$DOTFILES_DIR/.vimrc" ~
 ln -sfv "$DOTFILES_DIR/.gvimrc" ~
 ln -sfv "$DOTFILES_DIR/fzf.bash" ~/.fzf.bash
+ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 
 
 ln -sfv "$DOTFILES_DIR/.vim/shortcuts.vim" ~/.vim/shortcuts.vim

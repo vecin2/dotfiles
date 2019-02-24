@@ -21,7 +21,7 @@ augroup END
 "Python settings{{{
 augroup filetype_py
 	autocmd!
-	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skip
+	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skipjk
 "}}}
 "Vimscript file setting ----- {{{
 augroup filetype_vim
@@ -114,7 +114,6 @@ set ttymouse=xterm2
 "Global Remaps{{{
 let mapleader="\<Space>"
 :inoremap jk <Esc>
-:vnoremap jk <Esc>
 :inoremap <Esc> <nop>
 noremap ; :
 noremap : <nop>
