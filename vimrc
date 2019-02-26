@@ -66,12 +66,12 @@ call vundle#end()
 
 
 " Source vim config when save {{{
-"augroup sourcevim
-"	autocmd!
-	"autocmd bufwritepost vimrc,config.vim,shortcuts.vim,plugins.vim source $MYVIMRC
+augroup sourcevim
+	autocmd!
+	autocmd bufwritepost vimrc,config.vim,shortcuts.vim,plugins.vim source $MYVIMRC
 augroup END
 " }}}
 "so ~/.vim/shortcuts.vim
-"so ~/.vim/config.vim
-"so ~/.vim/plugins.vim
+so ~/.vim/config.vim
+so ~/.vim/plugins.vim
 

@@ -26,8 +26,8 @@ PATH="$HOME/.local/bin:$JAVA_HOME/bin:$PATH"
 export JAVA_HOME
 
 #rerun
-export RERUN_MODULES=$HOME/dev/bash/rerun/modules
-export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
+#export RERUN_MODULES=$HOME/dev/bash/rerun/modules
+#export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
 source $HOME/dev/bash/rerun/etc/bash_completion.sh
 #export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
 
