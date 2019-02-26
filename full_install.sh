@@ -43,6 +43,8 @@ sudo apt-get install tmuxinator
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
 
+#utils
+sudo apt-get install xclip
 #ack
 sudo apt-get install ack
 
