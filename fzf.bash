@@ -12,6 +12,17 @@ fi
 # ------------
 source "/home/dgarcia/.fzf/shell/key-bindings.bash"
 
+# fkill - kill process
+fkill() {
+	local pid
+	pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
+
+	if [ "x$pid" != "x" ]
+	then
+		echo $pid | xargs kill -${1:-9}
+	fi
+}
+
 
 
 # Modified version where you can press
@@ -39,18 +50,6 @@ fo() {
 #bind '"\C-o":"fo\n"'
 
 
-# fkill - kill process
-fkill() {
-	local pid
-	pid=$(ps -ef | sed 1d | fzf -m | awk '{print $2}')
-
-	if [ "x$pid" != "x" ]
-	then
-		echo $pid | xargs kill -${1:-9}
-	fi
-}
-
-
 cf() {
 	local file
 
@@ -67,18 +66,9 @@ cf() {
 	fi
 }
 
-ft(){
-	local dest_bookmark=$(cdscuts_glob_echo | fzf )
-	#extract path from line choose
-	if [[ $dest_bookmark != '' ]]; then
-		local dest_dir="/${dest_bookmark#*/}";
-		cd "$dest_dir"
-	fi
-}
-#print all bookmards to feed fzf
-function cdscuts_glob_echo {
-   source $SDIRS
-   env | grep "^DIR_" | cut -c5- | sort |grep "^.*=" | sed 's/=/\t\t/g'
+ft() {
+	folder=$(lb | fzf --ansi | awk '{print $2}')
+	cd $folder
 }
 
 fg(){
