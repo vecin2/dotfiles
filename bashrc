@@ -124,12 +124,12 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
 
 # log every command typed and when
-if [ -n "${BASH_VERSION}" ]; then
-	trap "caller >/dev/null || \
-		printf '%s\\n' \"\$(date '+%Y-%m-%dT%H:%M:%S%z')\
-		\$(tty) \${BASH_COMMAND}\" 2>/dev/null >>~/.dotfiles/command_log" DEBUG
-fi
-
+#if [ -n "${BASH_VERSION}" ]; then
+#	trap "caller >/dev/null || \
+#		printf '%s\\n' \"\$(date '+%Y-%m-%dT%H:%M:%S%z')\
+#		\$(tty) \${BASH_COMMAND}\" 2>/dev/null >>~/.dotfiles/command_log" DEBUG
+#fi
+#
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/"
 #[ -n "$PS1" ] && \
