@@ -28,7 +28,7 @@ export JAVA_HOME
 #rerun
 #export RERUN_MODULES=$HOME/dev/bash/rerun/modules
 #export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
-source $HOME/dev/bash/rerun/etc/bash_completion.sh
+#source $HOME/dev/bash/rerun/etc/bash_completion.sh
 #export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
 
 [ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load EM into a shell session *as a function*
@@ -57,7 +57,7 @@ google() {
 #python
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python
+export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source $HOME/.local/bin/virtualenvwrapper.sh
 export TERM=screen-256color-bce
 
