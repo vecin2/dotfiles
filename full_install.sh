@@ -54,4 +54,4 @@ sudo apt install python3
 pip3 install virtualenv
 pip3 install virtualwrapper
 
-
+#Windows "Show Hidden extension for known types"
