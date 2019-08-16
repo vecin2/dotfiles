@@ -131,10 +131,10 @@ export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
 #fi
 #
 # Base16 Shell
-#BASE16_SHELL="$HOME/.config/base16-shell/"
-#[ -n "$PS1" ] && \
-#    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#        eval "$("$BASE16_SHELL/profile_helper.sh")"
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+    [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+        eval "$("$BASE16_SHELL/profile_helper.sh")"
 
  #Avoid duplicates
 #export HISTCONTROL=ignoredups:erasedups  
@@ -142,3 +142,6 @@ export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r; history -n"
 
+
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

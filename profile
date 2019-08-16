@@ -59,7 +59,10 @@ export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source $HOME/.local/bin/virtualenvwrapper.sh
-export TERM=screen-256color-bce
+#export TERM=screen-256color-bce
 
 #autocomplation for fasd
 #eval "$(fasd --init auto)"
+#export LS_COLORS="$(vivid generate molokai)"
+#test -r "~/.dir_colors_nord" &&
+eval $(dircolors ~/.dir_colors)
