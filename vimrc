@@ -2,10 +2,6 @@ set nocompatible              " be iMproved, required
 syntax enable
 filetype plugin indent on
 
-
-
-
-
 "bundle Plugins {{{
 set rtp+=~/.vim/bundle/Vundle.vim,~/.fzf
 call vundle#begin()
@@ -27,7 +23,10 @@ Plugin 'https://github.com/kana/vim-arpeggio.git'
 Plugin 'junegunn/fzf.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/ivalkeen/nerdtree-execute.git'
-Plugin 'Xuyuanp/nerdtree-git-plugin'
+"This pull request from syntastic fixes an issue when opening files
+"out of nerdtree, e.g fzf and then try to save then
+"Plugin 'Xuyuanp/nerdtree-git-plugin'
+Plugin 'git@github.com:NickolasHKraus/nerdtree-git-plugin.git'
 Plugin 'https://github.com/terryma/vim-smooth-scroll'
 Plugin 'https://github.com/easymotion/vim-easymotion.git'
 Plugin 'christoomey/vim-tmux-navigator'
