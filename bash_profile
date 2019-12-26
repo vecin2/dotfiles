@@ -1,5 +1,4 @@
 [[ -s "$HOME/.profile" ]] && source "$HOME/.profile" # Load the default .profile
-
 #rr_completion=~/dev/bash/rerun/etc/bash_completion.sh
 #[[ -s "$rr_completion" ]] && source "$rr_completion" # Load rr autocmplation
 

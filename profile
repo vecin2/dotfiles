@@ -42,27 +42,3 @@ export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD
 export ORACLE_HOME=/usr/lib/oracle/12.1/client64
 export PATH=$PATH:$ORACLE_HOME/bin 
 
-#Bookmarks
-. $HOME/.local/bin/bashmarks.sh 
-
-google() {
-	search=""
-	echo "Googling: $@"
-	for term in $@; do
-		search="$search%20$term"
-	done
-	firefox "http://www.google.com/search?q=$search"
-}
-
-#python
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-source $HOME/.local/bin/virtualenvwrapper.sh
-#export TERM=screen-256color-bce
-
-#autocomplation for fasd
-#eval "$(fasd --init auto)"
-#export LS_COLORS="$(vivid generate molokai)"
-#test -r "~/.dir_colors_nord" &&
-eval $(dircolors ~/.dir_colors)
