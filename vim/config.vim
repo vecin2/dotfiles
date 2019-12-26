@@ -69,7 +69,13 @@ set scrolloff=5
 "set relativenumber and absolute number for current line
 set rnu
 set number
-" }}}
+"This map allows to use the arrow keys in insert mode. Otherwise it shows
+"strange characters
+map OA <up>
+map OB <down>
+map OC <right>
+map OD <left>
+"}}}
 
 "Status Line {{{
 "Display status line always
@@ -102,23 +108,18 @@ set statusline+=%*
 set statusline+=\
 "}}}
 
-"To Remove or to Categorize... {{{
-"Not sure what issue they fix
-"map OA <up>
-"map OB <down>
-"map OC <right>
-"map OD <left>
-"}}}
-
 "Mouse config {{{
 set mouse=a  "enable mouse
-set ttymouse=xterm2
+set ttymouse=sgr
 " }}}
 
 "Global Remaps{{{
 let mapleader="\<Space>"
 :inoremap jk <Esc>
-:inoremap <Esc> <nop>
+"Uncommenting the below lines causes characters to appear when mouse events
+"occur in insert mode
+":inoremap <Esc> <nop>
+
 noremap ; :
 noremap : <nop>
 "}}}
