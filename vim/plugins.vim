@@ -3,6 +3,10 @@ call arpeggio#load()
 " }}}
 
 "FZF shorcuts +Ack with AG {{{
+
+"Ag searches only by content not by filename
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, {'options': '--delimiter : --nth 4..'}, <bang>0)
+"shorcuts
 nnoremap <leader>g :Ag<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <leader>b :Buffers<CR>
@@ -27,7 +31,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-let g:ycm_confirm_extra_conf=0
 
 "Solve error when sourcing files in bash files
 let g:syntastic_sh_shellcheck_args = "-x"
@@ -42,6 +45,14 @@ let g:syntastic_mode_map = {
 "	autocmd VimEnter * nnoremap <silent> <c-j> :TmuxNavigateDown<cr>:redraw!<cr>
 "augroup END
 
+"}}}
+
+"YouCompleteMe (ycm){{{
+"Uncomment this if it prompts for confirmaiton to load the extra conf python
+"file
+"let g:ycm_confirm_extra_conf=0
+let g:ycm_autoclose_preview_window_after_completion=1
+Arpeggionoremap gt :YcmCompleter GoToDefinition<CR>
 "}}}
 
 "Vimux {{{

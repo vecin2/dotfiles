@@ -25,8 +25,10 @@ augroup END
 "Python settings{{{
 augroup filetype_py
 	autocmd!
-	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skipjk
+	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skip
+	autocmd FileType python : set colorcolumn =79
 "}}}
+
 "Vimscript file setting ----- {{{
 augroup filetype_vim
 	autocmd!
@@ -212,6 +214,8 @@ nnoremap <Leader>pl :e ~/Documents/personal/links.txt<CR>
 nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR> 
 nnoremap <Leader>uv :e ~/Documents/kana/usefulviews.sql<CR> 
 nnoremap <Leader>mv :e $MYVIMRC<CR> "Edit MYVIMRC
-nnoremap <Leader>mc :e ~/.vim/config.vim<CR> "Edit MYVIMRC
+nnoremap <Leader>mc :e ~/.vim/config.vim<CR> "Edit config.vim
+nnoremap <Leader>mp :e ~/.vim/plugins.vim<CR> "Edit plugins.vim
 nnoremap <Leader>pn :e $EM_CORE_HOME/docs/notes.txt<CR> 
 "}}}
+
