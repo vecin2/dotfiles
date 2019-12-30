@@ -99,3 +99,22 @@ let NERDTreeDirArrows = 1
 let NERDTreeIgnore = ['.pyc$']
 
 "}}}
+
+"Submodules{{{
+" don't consume submode-leaving key
+let g:submode_keep_leaving_key = 1
+let g:submode_always_show_submode = 1
+"Allows changin windows size easily
+call submode#enter_with('window', 'n', '', '<C-w>')
+for key in ['=','_','+','-','<','>']
+  call submode#map('window', 'n', '', key, '<C-w>' . key)
+endfor
+
+call submode#enter_with('goToFoldDown', 'n', '', 'zj')
+call submode#map('goToFoldDown', 'n', '', 'j', 'zj')
+call submode#map('goToFoldDown', 'n', '', 'k', 'zk')
+call submode#enter_with('goToFoldUp', 'n', '', 'zk')
+call submode#map('goToFoldUp', 'n', '', 'k', 'zk')
+call submode#map('goToFoldUp', 'n', '', 'j', 'zj')
+
+"}}}
