@@ -8,6 +8,7 @@ endif
 "highlight Comment cterm=italic
 "}}}
 
+
 "Coding settings {{{
 set tags +=.git/tags
 "It defaults diff splits to be vertical
@@ -37,10 +38,15 @@ augroup END
 " }}}
 
 " Folding {{{
-" Folding based on indentation:
-set foldmethod=indent
+"Cheatsheet
+"zi switch folding on or off
+"za toggle current fold open/close
+"zc close current fold
+"zM close all folds 
+"zv expand folds to reveal cursor
 set nofoldenable
 nnoremap , za
+nnoremap <leader>, zMzv
 " }}}
 
 "Searching {{{
