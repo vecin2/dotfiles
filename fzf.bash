@@ -71,7 +71,8 @@ ft() {
 	cd $folder
 }
 
-fg(){
+#fg conflicts with 'fg' linux command which bring back a background process
+fgr(){
   local file
 
   file="$(ag --nobreak --noheading $@ | fzf -0 -1 | awk -F: '{print $1}')"
