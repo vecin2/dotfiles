@@ -18,6 +18,7 @@ Plugin 'https://github.com/nanotech/jellybeans.vim.git'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'https://github.com/blueyed/vim-diminactive'
 Plugin 'https://github.com/kana/vim-arpeggio.git'
+Plugin 'https://github.com/kana/vim-submode.git'
 
 "Search && Navigation
 Plugin 'junegunn/fzf.vim'
@@ -54,6 +55,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
+Plugin 'tmhedberg/SimpylFold'
  " Brief help
  " :PluginList       - lists configured plugins
  " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
