@@ -1,6 +1,5 @@
 #verint
 #alias ad="cd $AD/shell_tools"
-alias ll='ls --color'
 
 #rerun
 alias rr="~/dev/bash/rerun/rerun"
