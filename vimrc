@@ -29,8 +29,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'https://github.com/ivalkeen/nerdtree-execute.git'
 "This pull request from syntastic fixes an issue when opening files
 "out of nerdtree, e.g fzf and then try to save then
-"Plugin 'Xuyuanp/nerdtree-git-plugin'
-Plugin 'git@github.com:NickolasHKraus/nerdtree-git-plugin.git'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
 Plugin 'https://github.com/terryma/vim-smooth-scroll'
 "Plugin 'https://github.com/easymotion/vim-easymotion.git'
 Plugin 'christoomey/vim-tmux-navigator'
