@@ -8,7 +8,6 @@ endif
 "highlight Comment cterm=italic
 "}}}
 
-
 "Coding settings {{{
 set tags +=.git/tags
 "It defaults diff splits to be vertical

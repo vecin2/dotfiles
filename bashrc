@@ -148,6 +148,10 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 # END ANSIBLE MANAGED BLOCK
 #Enable VcXsrv for clipboard to work correctly within WSL
 export DISPLAY=localhost:0.0
+xlaunch="/mnt/c/Program Files/VcXsrv/xlaunch.exe"
+if test -f "$xlaunch"; then
+	"$xlaunch" -run /mnt/c/Users/vecin/Desktop/config.xlaunch
+fi
 
 #Bookmarks
 . $HOME/.local/bin/bashmarks.sh 
