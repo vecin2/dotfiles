@@ -143,13 +143,6 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# BEGIN ANSIBLE MANAGED BLOCK
-# Base16 Shell
-   BASE16_SHELL="$HOME/.config/base16-shell/"
-   [ -n "$PS1" ] && \
-   [ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-   eval "$("$BASE16_SHELL/profile_helper.sh")"
-# END ANSIBLE MANAGED BLOCK
 #Enable VcXsrv for clipboard to work correctly within WSL
 export DISPLAY=localhost:0.0
 xlaunch="/mnt/c/Program Files/VcXsrv/xlaunch.exe"
@@ -169,12 +162,11 @@ google() {
 	firefox "http://www.google.com/search?q=$search"
 }
 
-#python
+#setup python virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source $HOME/.local/bin/virtualenvwrapper.sh
-#export TERM=screen-256color-bce
 
 #autocomplation for fasd
 #eval "$(fasd --init auto)"
