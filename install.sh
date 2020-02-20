@@ -14,6 +14,8 @@ ln -sfv "$DOTFILES_DIR/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/gvimrc" ~/.gvimrc
 ln -sfv "$DOTFILES_DIR/fzf.bash" ~/.fzf.bash
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
+ln -sfv "$DOTFILES_DIR/dir_colors" ~/.dir_colors
+ln -sfv "$DOTFILES_DIR/em.sh" ~/.em.sh
 
 
 mkdir -p $HOME/.vim

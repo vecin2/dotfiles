@@ -1,5 +1,10 @@
 #verint
-#alias ad="cd $AD/shell_tools"
+alias tad="cd $EM_CORE_HOME"
+alias ced='wstart ccadmin ced'
+alias sqltask='command "/mnt/c/em/projects/pacificorp/bin/sqltask.exe"'
+alias rsql='sqltask run-sql'
+alias csql='sqltask create-sql'
+alias tsql='sqltask create-sql'
 
 #rerun
 alias rr="~/dev/bash/rerun/rerun"

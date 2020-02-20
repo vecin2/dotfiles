@@ -63,7 +63,11 @@ nmap <leader>a <Esc>:Ack!
 "Clipboard settings {{{
 "Allows to paste text copied from Vim after exit vim
 autocmd VimLeave * call system("xclip -o | xclip -selection c")
-set clipboard=unnamed
+set clipboard=unnamedplus
+" Prevent x from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_X
+
 "}}}
 
 """Navigating docs {{{

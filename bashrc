@@ -145,13 +145,10 @@ export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; histor
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 #Enable VcXsrv for clipboard to work correctly within WSL
 export DISPLAY=localhost:0.0
-xlaunch="/mnt/c/Program Files/VcXsrv/xlaunch.exe"
-if test -f "$xlaunch"; then
-	"$xlaunch" -run /mnt/c/Users/vecin/Desktop/config.xlaunch
-fi
 
 #Bookmarks
 . $HOME/.local/bin/bashmarks.sh 
+. $HOME/.sdirs
 
 google() {
 	search=""
@@ -162,11 +159,6 @@ google() {
 	firefox "http://www.google.com/search?q=$search"
 }
 
-#setup python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-source $HOME/.local/bin/virtualenvwrapper.sh
 
 #autocomplation for fasd
 #eval "$(fasd --init auto)"
@@ -174,3 +166,13 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #test -r "~/.dir_colors_nord" &&
 eval $(dircolors ~/.dir_colors)
 
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+	eval "$("$BASE16_SHELL/profile_helper.sh")"
+export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
+export AD=$EM_CORE_HOME
+export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
+#sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
+. ~/.em.sh
