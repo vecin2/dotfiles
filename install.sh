@@ -15,12 +15,16 @@ ln -sfv "$DOTFILES_DIR/gvimrc" ~/.gvimrc
 ln -sfv "$DOTFILES_DIR/fzf.bash" ~/.fzf.bash
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
 ln -sfv "$DOTFILES_DIR/dir_colors" ~/.dir_colors
-ln -sfv "$DOTFILES_DIR/em.sh" ~/.em.sh
 
 
 mkdir -p $HOME/.vim
+verint_path=$(wslpath 'C:\ProgramData\Verint\')
+mkdir -p $verint_path
 ln -sfv "$DOTFILES_DIR/vim/shortcuts.vim" ~/.vim/shortcuts.vim
 ln -sfv "$DOTFILES_DIR/vim/colors.vim" ~/.vim/colors.vim
 ln -sfv "$DOTFILES_DIR/vim/plugins.vim" ~/.vim/plugins.vim
 ln -sfv "$DOTFILES_DIR/vim/config.vim" ~/.vim/config.vim
 
+ln -sfv "${DOTFILES_DIR}"/em ~/.em
+cp -rf "${DOTFILES_DIR}"/em/powershell/ $verint_path
+echo "Copied '${DOTFILES_DIR}/em/powershell' to '${verint_path}'"

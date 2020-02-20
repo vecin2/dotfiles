@@ -175,4 +175,4 @@ export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
 export AD=$EM_CORE_HOME
 export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
 #sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
-. ~/.em.sh
+. $EM_CORE_HOME/project/.em/em.sh
