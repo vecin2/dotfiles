@@ -18,11 +18,19 @@ vpl(){
 ccadmin(){
 	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@" &
 }
-kill_ad(){
+ad_kill(){
 	dir='C:\ProgramData\Verint\powershell\kill_ad_java.ps1'
 	powershell.exe -F $dir
 }
-restart_ad(){
-	kill_ad
+ad_restart(){
+	ad_kill
 	ccadmin start-appserver -Dcontainer.name=ad
+}
+ced_kill(){
+	dir='C:\ProgramData\Verint\powershell\kill_ced_java.ps1'
+	powershell.exe -F $dir
+}
+ced_restart(){
+	ced_kill
+	ccadmin ced
 }
