@@ -1,5 +1,5 @@
 #verint
-#alias ad="cd $AD/shell_tools"
+alias tad="cd $EM_CORE_HOME"
 
 #rerun
 alias rr="~/dev/bash/rerun/rerun"
