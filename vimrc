@@ -9,7 +9,6 @@ Plugin 'VundleVim/Vundle.vim'
 "
 "UI and utils{{{
 "Approx true colors to 256 scheme colors
-Plugin 'https://github.com/godlygeek/csapprox.git'
 "Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 Plugin 'chriskempson/base16-vim'
 "Jellybeans color scheme

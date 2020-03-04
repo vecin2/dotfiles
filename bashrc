@@ -182,3 +182,14 @@ eval $(dircolors ~/.dir_colors)
 
 #For being able to run .bat files from WSL
 #sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
+
+# Base16 Shell
+BASE16_SHELL="$HOME/.config/base16-shell/"
+[ -n "$PS1" ] && \
+	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+	eval "$("$BASE16_SHELL/profile_helper.sh")"
+export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
+export AD=$EM_CORE_HOME
+export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
+#sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
+. $EM_CORE_HOME/project/.em/em.sh
