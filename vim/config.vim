@@ -63,7 +63,11 @@ nmap <leader>a <Esc>:Ack!
 "Clipboard settings {{{
 "Allows to paste text copied from Vim after exit vim
 autocmd VimLeave * call system("xclip -o | xclip -selection c")
-set clipboard=unnamed
+set clipboard=unnamedplus
+" Prevent x from overriding what's in the clipboard.
+noremap x "_x
+noremap X "_X
+
 "}}}
 
 """Navigating docs {{{
@@ -138,9 +142,6 @@ nnoremap \d :bp<cr>:bd! #<cr>
 nnoremap <silent> <Leader>c :nohl<CR><C-l>
 "Change root dir to current
 nnoremap cd. :lcd %:p:h<CR>:pwd<CR> 
-"Change window size
-nnoremap <silent> <Leader>> :vertical resize +5<CR>
-nnoremap <silent> <Leader>< :vertical resize -5<CR>
 "}}}
 
 """ Ctrl+S {{{

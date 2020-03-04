@@ -38,7 +38,9 @@ export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templa
 #[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
 # Needed to allow cx_Oracle python library run DB queries
-export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+export LD_LIBRARY_PATH=/home/dgarcia/oracle/instantclient_19_5/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+#export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+#export ORACLE_HOME=/usr/lib/oracle/12.1/client64
 export PATH=$PATH:$ORACLE_HOME/bin 
-
+export EM_CORE_HOME=/mnt/c/em//projects/pacificorp
+#export EM_CORE_HOME=/opt/em/projects/pacificorp/trunk
