@@ -17,7 +17,7 @@ Plugin 'chriskempson/base16-vim'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'https://github.com/blueyed/vim-diminactive'
 
-"Shorcut commmands, e.g: resize window quicker 
+"Shorcut commmands, e.g: resize window quicker
 Plugin 'https://github.com/kana/vim-arpeggio.git'
 Plugin 'https://github.com/kana/vim-submode.git'
 "}}}
@@ -34,7 +34,6 @@ Plugin 'https://github.com/terryma/vim-smooth-scroll'
 "Plugin 'https://github.com/easymotion/vim-easymotion.git'
 Plugin 'christoomey/vim-tmux-navigator'
 "Plugin 'https://github.com/tpope/vim-projectionist.git'
-"Plugin 'https://github.com/kien/ctrlp.vim.git'
 Plugin 'https://github.com/mileszs/ack.vim.git'
 Plugin 'https://github.com/bronson/vim-visual-star-search.git'
 "Interact with tmux (VimRunLasCommand)
@@ -65,8 +64,9 @@ Plugin 'https://github.com/tpope/vim-dispatch.git'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'https://github.com/python-rope/ropevim.git'
+"Plugin 'https://github.com/python-rope/ropevim.git'
 Plugin 'dense-analysis/ale' "Asynchronous Ling Engine
+Plugin 'python-mode/python-mode'
 "}}}
  " Brief help
  " :PluginList       - lists configured plugins
@@ -87,4 +87,3 @@ augroup END
 " }}}
 so ~/.vim/config.vim
 so ~/.vim/plugins.vim
-
