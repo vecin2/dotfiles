@@ -44,6 +44,7 @@ Plugin 'https://github.com/benmills/vimux.git'
 "Editing{{{
 Plugin 'https://github.com/tpope/vim-repeat.git'
 Plugin 'https://github.com/tpope/vim-surround.git'
+Plugin 'jiangmiao/auto-pairs'
 Plugin 'https://github.com/tommcdo/vim-exchange.git'
 "Dealing with swap files
 Plugin 'https://github.com/gioele/vim-autoswap'
@@ -64,6 +65,8 @@ Plugin 'https://github.com/tpope/vim-dispatch.git'
 Bundle 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
 Plugin 'tmhedberg/SimpylFold'
+Plugin 'https://github.com/python-rope/ropevim.git'
+Plugin 'dense-analysis/ale' "Asynchronous Ling Engine
 "}}}
  " Brief help
  " :PluginList       - lists configured plugins

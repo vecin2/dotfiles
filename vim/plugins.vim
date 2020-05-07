@@ -60,6 +60,8 @@ noremap <Leader>vp :VimuxPromptCommand<CR>
 noremap <Leader>vl :VimuxRunLastCommand<CR>
 noremap <Leader>vi :VimuxInspectRunner<CR>
 noremap <Leader>vz :VimuxZoomRunner<CR>
+noremap <C-c>r : RopeRename
+noremap <C-X>pnf      :call RopeCreateFile()
 Arpeggiomap vl <leader>vl
 "}}}
 
@@ -107,7 +109,14 @@ let g:submode_always_show_submode = 1
 
 "Allows changin windows size easily
 call submode#enter_with('window', 'n', '', '<C-w>')
-for key in ['=','_','+','-','<','>']
+for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m',
+\           'n','o','p','q','r','s','t','u','v','w','x','y','z']
+  " maps lowercase, uppercase and <C-key>
+  call submode#map('window', 'n', '', key, '<C-w>' . key)
+  call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
+  call submode#map('window', 'n', '', '<C-' . key . '>', '<C-w>' . '<C-'.key . '>')
+endfor
+for key in ['=','_','+','-','<','>','w']
   call submode#map('window', 'n', '', key, '<C-w>' . key)
 endfor
 
@@ -133,4 +142,19 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "let g:UltiSnipsExpandTrigger="<c-f>"
 "let g:UltiSnipsJumpForwardTrigger="<c-f>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-b>"
+"}}}
+
+"ale {{{
+"'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
+"'autopep8' - Fix PEP8 issues with autopep8.
+"'black' - Fix PEP8 issues with black.
+"'isort' - Sort Python imports with isort.
+"'reorder-python-imports' - Sort Python imports with reorder-python-imports.
+"'yapf' - Fix Python files with yapf.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'python':['add_blank_lines_for_python_control_statements','autopep8','black','isort']
+\}
+let g:ale_fix_on_save = 1
 "}}}

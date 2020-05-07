@@ -42,5 +42,3 @@ export LD_LIBRARY_PATH=/home/dgarcia/oracle/instantclient_19_5/${LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 #export ORACLE_HOME=/usr/lib/oracle/12.1/client64
 export PATH=$PATH:$ORACLE_HOME/bin 
-export EM_CORE_HOME=/mnt/c/em//projects/pacificorp
-#export EM_CORE_HOME=/opt/em/projects/pacificorp/trunk

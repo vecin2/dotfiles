@@ -167,6 +167,10 @@ ccadmin(){
 	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@" 
 }
 
+muxworkon(){
+ tmux kill-session  -t "dummy"
+ tmuxinator list-sessions || ( tmux new -d -s "dummy" && tmuxinator start $1 )
+}
 
 #setup python virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
@@ -188,8 +192,9 @@ BASE16_SHELL="$HOME/.config/base16-shell/"
 [ -n "$PS1" ] && \
 	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 	eval "$("$BASE16_SHELL/profile_helper.sh")"
-export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
+export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
 export AD=$EM_CORE_HOME
 export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
+
 #sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
-. $EM_CORE_HOME/project/.em/em.sh
+. /mnt/c/ProgramData/Verint/.em/em.sh

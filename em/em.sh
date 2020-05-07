@@ -16,7 +16,7 @@ vpl(){
 	vim $(last_log_path $1)
 }
 ccadmin(){
-	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@" &
+	cmd.exe wslpath -w "${EM_CORE_HOME}/bin/ccadmin.bat" "$@" &
 }
 ad_kill(){
 	dir='C:\ProgramData\Verint\powershell\kill_ad_java.ps1'

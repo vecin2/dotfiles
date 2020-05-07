@@ -9,6 +9,7 @@ endif
 "}}}
 
 "Coding settings {{{
+
 set tags +=.git/tags
 "It defaults diff splits to be vertical
 set diffopt+=vertical
@@ -25,8 +26,21 @@ augroup END
 "Python settings{{{
 augroup filetype_py
 	autocmd!
-	autocmd FileType python :iabbrev <buffer> \s @pytest.mark.skip
 	autocmd FileType python : set colorcolumn =79
+"python with virtualenv support
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  #exec(activate_this, dict(__file__=activate_this))
+  #exec(open(filename).read())
+  with open(activate_this) as infile:
+      exec(infile.read(),dict(__file__=activate_this))
+
+EOF
+
 "}}}
 
 "Vimscript file setting ----- {{{
@@ -138,7 +152,7 @@ noremap : <nop>
 "Other Vim remaps {{{
 "To allow NERDTREE delete a buffer without exiting window
 nnoremap \d :bp<cr>:bd! #<cr>
-" <Ctrl-l> redraws the screen and removes any search highlighting.
+" <leader>-c redraws the screen and removes any search highlighting.
 nnoremap <silent> <Leader>c :nohl<CR><C-l>
 "Change root dir to current
 nnoremap cd. :lcd %:p:h<CR>:pwd<CR> 
