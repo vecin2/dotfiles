@@ -60,8 +60,6 @@ noremap <Leader>vp :VimuxPromptCommand<CR>
 noremap <Leader>vl :VimuxRunLastCommand<CR>
 noremap <Leader>vi :VimuxInspectRunner<CR>
 noremap <Leader>vz :VimuxZoomRunner<CR>
-noremap <C-c>r : RopeRename
-noremap <C-X>pnf      :call RopeCreateFile()
 Arpeggiomap vl <leader>vl
 "}}}
 
@@ -158,3 +156,13 @@ let g:ale_fixers = {
 \}
 let g:ale_fix_on_save = 1
 "}}}
+let g:pymode_rope_rename_bind = '<C-c>rr'
+let g:pymode_rope_rename_module_bind = '<C-c>r1r'
+let g:pymode_rope_organize_imports_bind = '<C-c>ro'
+let g:pymode_rope_autoimport_bind = '<C-c>ra'
+let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
+let g:pymode_rope_extract_method_bind = '<C-c>rm'
+let g:pymode_rope_extract_variable_bind = '<C-c>rl'
+let g:pymode_rope_use_function_bind = '<C-c>ru'
+let g:pymode_rope_move_bind = '<C-c>rv'
+let g:pymode_rope_change_signature_bind = '<C-c>rs'
