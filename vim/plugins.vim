@@ -27,17 +27,17 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 "}}}
 
 "Syntasic {{{
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"Solve error when sourcing files in bash files
-let g:syntastic_sh_shellcheck_args = "-x"
-
-let g:syntastic_mode_map = {
-    \ "mode": "active",
-    \ "passive_filetypes": ["xml","java","sh"] }
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"
+""Solve error when sourcing files in bash files
+"let g:syntastic_sh_shellcheck_args = "-x"
+"
+"let g:syntastic_mode_map = {
+"    \ "mode": "active",
+"    \ "passive_filetypes": ["xml","java","sh"] }
 
 "workaround to fix draw issue with syntastic
 "augroup redrawfix
@@ -143,26 +143,19 @@ let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
 "}}}
 
 "ale {{{
-"'add_blank_lines_for_python_control_statements' - Add blank lines before control statements.
-"'autopep8' - Fix PEP8 issues with autopep8.
-"'black' - Fix PEP8 issues with black.
-"'isort' - Sort Python imports with isort.
-"'reorder-python-imports' - Sort Python imports with reorder-python-imports.
-"'yapf' - Fix Python files with yapf.
+let g:ale_linters ={'python':['flake8']}
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'python':['add_blank_lines_for_python_control_statements','autopep8','black','isort']
+\   'python':['add_blank_lines_for_python_control_statements','black','isort']
 \}
 let g:ale_fix_on_save = 1
+let g:ale_lint_on_enter = 0
+"let g:ale_sign_error = '●'
+"let g:ale_sign_warning = '.'
+
+noremap ]a :ALENextWrap<CR>
+noremap [a :ALEPreviousWrap<CR>
+noremap ]A :ALELast<CR>
+noremap [A :ALEFirst<CR>
 "}}}
-let g:pymode_rope_rename_bind = '<C-c>rr'
-let g:pymode_rope_rename_module_bind = '<C-c>r1r'
-let g:pymode_rope_organize_imports_bind = '<C-c>ro'
-let g:pymode_rope_autoimport_bind = '<C-c>ra'
-let g:pymode_rope_module_to_package_bind = '<C-c>r1p'
-let g:pymode_rope_extract_method_bind = '<C-c>rm'
-let g:pymode_rope_extract_variable_bind = '<C-c>rl'
-let g:pymode_rope_use_function_bind = '<C-c>ru'
-let g:pymode_rope_move_bind = '<C-c>rv'
-let g:pymode_rope_change_signature_bind = '<C-c>rs'
