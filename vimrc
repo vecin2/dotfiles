@@ -29,8 +29,6 @@ Plugin 'https://github.com/ivalkeen/nerdtree-execute.git'
 "This pull request from syntastic fixes an issue when opening files
 "out of nerdtree, e.g fzf and then try to save then
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-
-"Plugin 'psliwka/vim-smoothie'
 Plugin 'https://github.com/terryma/vim-smooth-scroll'
 "Plugin 'https://github.com/easymotion/vim-easymotion.git'
 Plugin 'christoomey/vim-tmux-navigator'
@@ -58,16 +56,14 @@ Plugin 'honza/vim-snippets'
 "Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
-"Plugin 'bash-support.vim'
 Plugin 'tpope/vim-fugitive'
 "Bundle 'skalnik/vim-vroom'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
-"Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
 Plugin 'tmhedberg/SimpylFold' "folds for python
 "Plugin 'https://github.com/python-rope/ropevim.git'
 Plugin 'dense-analysis/ale' "Asynchronous Ling Engine
-"Plugin 'python-mode/python-mode'
 "}}}
  " Brief help
  " :PluginList       - lists configured plugins
