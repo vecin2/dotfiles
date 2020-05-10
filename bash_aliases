@@ -10,9 +10,12 @@ alias tsql='sqltask create-sql'
 alias rr="~/dev/bash/rerun/rerun"
 alias trr="cd ~/dev/bash/rerun"
 
+#tmux
+alias tmux="env TERM=screen-italics tmux -2"
+
 #tmuxinator
 alias mux=tmuxinator
-alias ag="ag --color-path '36;1' --color-line-number '1;35'" 
+alias ag="ag --color-path '36;1' --color-line-number '1;35'"
 stty -ixon
 
 #fasd

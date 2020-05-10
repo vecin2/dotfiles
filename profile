@@ -32,13 +32,13 @@ export JAVA_HOME
 #export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
 
 [ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load EM into a shell session *as a function*
+[ -s "/mnt/c/ProgramData/Verint/.em/em.sh" ] && . /mnt/c/ProgramData/Verint/.em/em.sh
+
 export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templates"
 
-#export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-#[ -s "$HOME/.rvm/scripts/rvm" ] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
+#ORACLE
 # Needed to allow cx_Oracle python library run DB queries
 export LD_LIBRARY_PATH=/home/dgarcia/oracle/instantclient_19_5/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
+export PATH=$PATH:$ORACLE_HOME/bin
 #export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 #export ORACLE_HOME=/usr/lib/oracle/12.1/client64
-export PATH=$PATH:$ORACLE_HOME/bin 

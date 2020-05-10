@@ -1,5 +1,12 @@
 # Setup fzf
 # ---------
+export FZF_DEFAULT_OPTIONS="--extended --color fg:241,bg:230,hl:33,fg+:241,bg+:221,hl+:33 --color info:33,prompt:33,pointer:166,marker:166,spinner:33"
+# Setting fd as the default source for fzf
+#export FZF_DEFAULT_COMMAND='fd --type f'
+export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.ignore --hidden -g "" --follow'
+# To apply the command to CTRL-T as well
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
 if [[ ! "$PATH" == */home/dgarcia/.fzf/bin* ]]; then
   export PATH="${PATH:+${PATH}:}/home/dgarcia/.fzf/bin"
 fi
@@ -43,7 +50,7 @@ fo() {
 	 elif [ "$key" = ctrl-n ]; then
 		 nautilus "$file"
 	 else
-		 xdg-open "$file" 
+		 xdg-open "$file"
 	 fi
 	fi
 }

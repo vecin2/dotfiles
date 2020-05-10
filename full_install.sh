@@ -23,6 +23,11 @@ fi
 
 #install solarized
 
+#create italics for tmux
+
+tic ~/dotfiles/screen-italics.terminfo
+#alias tmux="env TERM=screen-italics tmux -2"
+
 #base 16
 git clone https://github.com/chriskempson/base16-shell.git ~/.config/base16-shell
 

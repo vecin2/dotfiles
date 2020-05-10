@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 "UI and utils{{{
 "Approx true colors to 256 scheme colors
 "Plugin 'https://github.com/altercation/vim-colors-solarized.git'
-Plugin 'chriskempson/base16-vim'
+"Plugin 'chriskempson/base16-vim'
 "Jellybeans color scheme
 "Plugin 'https://github.com/nanotech/jellybeans.vim.git'
 "allows window highlighting
@@ -76,11 +76,12 @@ call vundle#end()
 "}}}
 
 
+"colorscheme gruvbox
 " Source vim config when save {{{
-augroup sourcevim
-	autocmd!
-	autocmd bufwritepost vimrc,config.vim,plugins.vim source $MYVIMRC
-augroup END
+"augroup sourcevim
+"	autocmd!
+"	autocmd bufwritepost vimrc,config.vim,plugins.vim source $MYVIMRC
+"augroup END
 
 " }}}
 so ~/.vim/config.vim

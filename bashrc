@@ -117,16 +117,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-export FZF_DEFAULT_OPTIONS="--extended --color fg:241,bg:230,hl:33,fg+:241,bg+:221,hl+:33 --color info:33,prompt:33,pointer:166,marker:166,spinner:33"
-# Setting fd as the default source for fzf
-#export FZF_DEFAULT_COMMAND='fd --type f'
-export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.ignore --hidden -g "" --follow'
-# To apply the command to CTRL-T as well
-export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
-export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
-
 # log every command typed and when
 #if [ -n "${BASH_VERSION}" ]; then
 #	trap "caller >/dev/null || \
@@ -135,24 +125,15 @@ export MY_BASHRC_VAR="$FZF_DEFAULT_COMMAND"
 #fi
 
  #Avoid duplicates
-#export HISTCONTROL=ignoredups:erasedups  
+#export HISTCONTROL=ignoredups:erasedups
 
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r; history -n"
 
 
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
 #Enable VcXsrv for clipboard to work correctly within WSL
 export DISPLAY=localhost:0.0
-#xlaunch="/mnt/c/Program Files/VcXsrv/xlaunch.exe"
-#if test -f "$xlaunch"; then
-#	"$xlaunch" -run /mnt/c/Users/vecin/Desktop/config.xlaunch
-#fi
-
-#Bookmarks
-. $HOME/.local/bin/bashmarks.sh 
-. $HOME/.sdirs
 
 google() {
 	search=""
@@ -164,7 +145,7 @@ google() {
 }
 
 ccadmin(){
-	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@" 
+	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@"
 }
 
 muxworkon(){
@@ -178,23 +159,26 @@ export PROJECT_HOME=$HOME/dev/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 source $HOME/.local/bin/virtualenvwrapper.sh
 
+#### NAVIGATION ###
+#Bookmarks
+. $HOME/.local/bin/bashmarks.sh
+. $HOME/.sdirs
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
 #autocomplation for fasd
 #eval "$(fasd --init auto)"
+
+##### UI #####
+#Dircolors
 #export LS_COLORS="$(vivid generate molokai)"
 #test -r "~/.dir_colors_nord" &&
 eval $(dircolors ~/.dir_colors)
 
-#For being able to run .bat files from WSL
-#sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
-
 # Base16 Shell
-BASE16_SHELL="$HOME/.config/base16-shell/"
-[ -n "$PS1" ] && \
-	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-	eval "$("$BASE16_SHELL/profile_helper.sh")"
-export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
-export AD=$EM_CORE_HOME
-export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
-
-#sudo sh -c "echo :WindowsBatch:E::bat::/init: > /proc/sys/fs/binfmt_misc/register"
-. /mnt/c/ProgramData/Verint/.em/em.sh
+#BASE16_SHELL="$HOME/.config/base16-shell/"
+#[ -n "$PS1" ] && \
+#	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
+#	eval "$("$BASE16_SHELL/profile_helper.sh")"
+#export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
+#export AD=$EM_CORE_HOME
+#export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
