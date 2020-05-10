@@ -1,37 +1,22 @@
 "Colors {{{
 "let base16colorspace=256
 "let base16colorspace=256
-if filereadable(expand("~/.vimrc_background"))
+"if filereadable(expand("~/.vimrc_background"))
 "	    source ~/.vimrc_background
-endif
-"if exists('+termguicolors')
+"endif
+if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-  "set t_ZH=[3m
-  "set t_ZR=[23m
   set termguicolors
   set background=dark
-"endif
+  colorscheme gruvbox
+endif
 let g:gruvbox_italic=1
 highlight Comment cterm=italic
 "}}}
-highlight ALEError ctermbg=DarkRed
-highlight ALEError guibg=DarkRed
-highlight ALEError guifg=DarkRed
 
 "Coding settings {{{
-
 set tags +=.git/tags
-"It defaults diff splits to be vertical
-set diffopt+=vertical
-"mark white spaces
-"augroup whitespace
-"	autocmd!
-"	au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
-"augroup END
-"Line added before autcmd run as it gives and error when opening .py
-"files because BadWhitespace does not exist
-:highlight BadWhitespace ctermfg=16 ctermbg=253 guifg=#000000 guibg=#F8F8F0
 " }}}
 
 "Python settings{{{

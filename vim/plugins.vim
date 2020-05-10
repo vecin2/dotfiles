@@ -151,4 +151,8 @@ noremap ]a :ALENextWrap<CR>
 noremap [a :ALEPreviousWrap<CR>
 noremap ]A :ALELast<CR>
 noremap [A :ALEFirst<CR>
+
+highlight ALEError ctermbg=DarkRed
+highlight ALEError guibg=DarkRed
+highlight ALEWarning guibg=Yellow
 "}}}
