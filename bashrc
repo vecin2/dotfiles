@@ -172,7 +172,7 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #Dircolors
 #export LS_COLORS="$(vivid generate molokai)"
 #test -r "~/.dir_colors_nord" &&
-eval $(dircolors ~/.dir_colors)
+#eval $(dircolors ~/.dir_colors)
 
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/"

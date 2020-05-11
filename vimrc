@@ -14,6 +14,13 @@ Plugin 'VundleVim/Vundle.vim'
 "Jellybeans color scheme
 "Plugin 'https://github.com/nanotech/jellybeans.vim.git'
 "allows window highlighting
+Plugin 'https://github.com/lisposter/vim-blackboard.git'
+Plugin 'sonph/onehalf'
+Plugin 'dracula/dracula-theme'
+Plugin 'sickill/vim-monokai'
+Plugin 'https://github.com/29decibel/codeschool-vim-theme.git'
+Plugin 'lifepillar/vim-solarized8'
+
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'https://github.com/blueyed/vim-diminactive'
 
@@ -78,10 +85,10 @@ call vundle#end()
 
 "colorscheme gruvbox
 " Source vim config when save {{{
-"augroup sourcevim
-"	autocmd!
-"	autocmd bufwritepost vimrc,config.vim,plugins.vim source $MYVIMRC
-"augroup END
+augroup sourcevim
+	autocmd!
+	autocmd bufwritepost vimrc,config.vim,plugins.vim source $MYVIMRC
+augroup END
 
 " }}}
 so ~/.vim/config.vim
