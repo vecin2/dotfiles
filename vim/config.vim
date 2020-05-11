@@ -10,9 +10,25 @@ if exists('+termguicolors')
   set termguicolors
   set background=dark
   colorscheme gruvbox
+  let g:gruvbox_italic=1
 endif
-let g:gruvbox_italic=1
 highlight Comment cterm=italic
+
+"" Customize fzf colors to match your color scheme
+let g:fzf_colors =
+\ { 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Comment'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'border':  ['fg', 'Ignore'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
 "}}}
 
 "Coding settings {{{
@@ -47,7 +63,7 @@ autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 "Vimscript file setting ----- {{{
 augroup filetype_vim
 	autocmd!
-	autocmd FileType vim setlocal foldmethod=marker
+	autocmd FileType vim setlocal foldmethod=marker tabstop=2 shiftwidth=2 softtabstop=2
 augroup END
 " }}}
 
