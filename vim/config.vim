@@ -85,7 +85,7 @@ noremap X "_X
 
 "}}}
 
-"""Navigating docs {{{
+"Navigating docs {{{
 "Remove backup files swp
 set nobackup nowritebackup
 "Allow exit buffer without saving
@@ -95,12 +95,15 @@ set scrolloff=5
 "set relativenumber and absolute number for current line
 "set rnu
 set number
+set cursorline
 "This map allows to use the arrow keys in insert mode. Otherwise it shows
 "strange characters
 map OA <up>
 map OB <down>
 map OC <right>
 map OD <left>
+
+
 "Highlight current line number but not line{{{
 hi clear CursorLine
 augroup CLClear
@@ -181,7 +184,7 @@ nnoremap <silent> <Leader>c :nohl<CR><C-l>
 nnoremap cd. :lcd %:p:h<CR>:pwd<CR>
 "}}}
 
-""" Ctrl+S {{{
+" Ctrl+S {{{
 " If the current buffer has never been saved, it will have no name,
 " " call the file browser to save it, otherwise just save it.
 command! -nargs=0 -bar Update if &modified
