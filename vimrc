@@ -20,6 +20,7 @@ Plugin 'dracula/dracula-theme'
 Plugin 'sickill/vim-monokai'
 Plugin 'https://github.com/29decibel/codeschool-vim-theme.git'
 Plugin 'lifepillar/vim-solarized8'
+Plugin 'arcticicestudio/nord-vim'
 
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'https://github.com/blueyed/vim-diminactive'
