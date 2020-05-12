@@ -57,3 +57,4 @@ install_wsltty_theme(){
 }
 install_wsltty_theme "gruvbox-contrib/mintty/gruvbox.minttyrc" "git@github.com:morhetz/gruvbox-contrib.git"
 install_wsltty_theme "nord-mintty/src/nord.minttyrc" "git@github.com:arcticicestudio/nord-mintty.git"
+install_wsltty_theme "WSL-config/mintty/themes/tomorrow-night.minttyrc" "git@github.com:hsab/WSL-config.git"
