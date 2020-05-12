@@ -1,6 +1,6 @@
 # Setup fzf
 # ---------
-export FZF_DEFAULT_OPTIONS="--extended --color fg:241,bg:230,hl:33,fg+:241,bg+:221,hl+:33 --color info:33,prompt:33,pointer:166,marker:166,spinner:33"
+#export FZF_DEFAULT_OPTIONS="--extended --color fg:241,bg:230,hl:33,fg+:241,bg+:221,hl+:33 --color info:33,prompt:33,pointer:166,marker:166,spinner:33"
 # Setting fd as the default source for fzf
 #export FZF_DEFAULT_COMMAND='fd --type f'
 export FZF_DEFAULT_COMMAND='ag --path-to-ignore ~/.ignore --hidden -g "" --follow'
