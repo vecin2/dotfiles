@@ -83,10 +83,8 @@ augroup END
 Arpeggiomap bd \d
 nnoremap <Leader>v :NERDTreeToggle<Enter>
 nnoremap <Leader>f :NERDTreeFind<Enter>
-"Automatically closes NT when opening  a file
-"let NERDTreeQuitOnOpen = 1
-"Automatically delete a buffer when delete file from NT
-let NERDTreeAutoDeleteBuffer = 1
+let NERDTreeAutoDeleteBuffer = 1 "Automatically delete a buffer when delete file from NT
+let g:NERDTreeQuitOnOpen = 1 "Closes nerdtree when opening a file
 
 "Hide Press ? for help
 let NERDTreeMinimalUI = 1
@@ -157,4 +155,14 @@ noremap [A :ALEFirst<CR>
 highlight ALEError ctermbg=DarkRed
 highlight ALEError guibg=DarkRed
 highlight ALEWarning guibg=Yellow
+"}}}
+
+"{{{Pytest
+nmap <silent><Leader>pf <Esc>:Pytest file<CR>
+nmap <silent><Leader>pc <Esc>:Pytest class<CR>
+nmap <silent><Leader>pm <Esc>:Pytest method<CR>
+nmap <silent><Leader>pp <Esc>:Pytest project<CR>
+nmap <silent><Leader>ps <Esc>:Pytest session<CR>
+Arpeggiomap tp <leader>pp
+let g:pytest_test_dir='/home/dgarcia/dev/python/python-emtask/emtask'
 "}}}
