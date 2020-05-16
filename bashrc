@@ -169,10 +169,6 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #eval "$(fasd --init auto)"
 
 ##### UI #####
-#Dircolors
-#export LS_COLORS="$(vivid generate molokai)"
-test -r "~/.dir_colors_nord" && eval $(dircolors ~/.dir_colors)
-
 # Base16 Shell
 #BASE16_SHELL="$HOME/.config/base16-shell/"
 #[ -n "$PS1" ] && \

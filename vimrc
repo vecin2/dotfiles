@@ -8,20 +8,14 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "
 "UI and utils{{{
-"Approx true colors to 256 scheme colors
-"Plugin 'https://github.com/altercation/vim-colors-solarized.git'
 "Plugin 'chriskempson/base16-vim'
-"Jellybeans color scheme
-"Plugin 'https://github.com/nanotech/jellybeans.vim.git'
-"allows window highlighting
-Plugin 'https://github.com/lisposter/vim-blackboard.git'
-Plugin 'sonph/onehalf'
-Plugin 'dracula/dracula-theme'
+Plugin 'https://github.com/lisposter/vim-blackboard.git' "allows window highlighting
+Plugin 'sonph/onehalf', {'rtp':'vim/'}
 Plugin 'sickill/vim-monokai'
 Plugin 'https://github.com/29decibel/codeschool-vim-theme.git'
 Plugin 'lifepillar/vim-solarized8'
 Plugin 'arcticicestudio/nord-vim'
-
+Plugin 'morhetz/gruvbox'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'https://github.com/blueyed/vim-diminactive'
 
@@ -44,7 +38,7 @@ Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'https://github.com/mileszs/ack.vim.git'
 Plugin 'https://github.com/bronson/vim-visual-star-search.git'
 "Interact with tmux (VimRunLasCommand)
-Plugin 'https://github.com/benmills/vimux.git'
+"Plugin 'https://github.com/benmills/vimux.git'
 "}}}
 
 "Editing{{{
@@ -64,14 +58,17 @@ Plugin 'honza/vim-snippets'
 "Plugin 'https://github.com/vim-syntastic/syntastic.git'
 Plugin 'https://github.com/tpope/vim-endwise.git'
 Plugin 'https://github.com/vim-ruby/vim-ruby.git'
+Plugin 'alfredodeza/pytest.vim'
 Plugin 'tpope/vim-fugitive'
 "Bundle 'skalnik/vim-vroom'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
 Plugin 'tmhedberg/SimpylFold' "folds for python
-"Plugin 'https://github.com/python-rope/ropevim.git'
+
+"PYTHON IDE
 Plugin 'dense-analysis/ale' "Asynchronous Ling Engine
+Plugin 'https://github.com/python-rope/ropevim.git' "refactoring
 "}}}
  " Brief help
  " :PluginList       - lists configured plugins

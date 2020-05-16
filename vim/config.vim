@@ -274,7 +274,6 @@ endfunction
 nnoremap <Leader>kl :e ~/Documents/kana/kanaLinks.txt<CR>
 nnoremap <Leader>pl :e ~/Documents/personal/links.txt<CR>
 nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR>
-nnoremap <Leader>uv :e ~/Documents/kana/usefulviews.sql<CR>
 nnoremap <Leader>mv :e $MYVIMRC<CR> "Edit MYVIMRC
 nnoremap <Leader>mc :e ~/.vim/config.vim<CR> "Edit config.vim
 nnoremap <Leader>mp :e ~/.vim/plugins.vim<CR> "Edit plugins.vim
