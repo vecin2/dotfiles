@@ -1,18 +1,18 @@
 "Colors {{{
-"let base16colorspace=256
-"let base16colorspace=256
-"if filereadable(expand("~/.vimrc_background"))
-"	    source ~/.vimrc_background
-"endif
+let base16colorspace=256
+let base16colorspace=256
+if filereadable(expand("~/.vimrc_background"))
+	    source ~/.vimrc_background
+endif
 if exists('+termguicolors')
   let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
   let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
   set termguicolors
   set background=dark
-  colorscheme gruvbox
+  "colorscheme gruvbox
   let g:gruvbox_italic=1
+	"highlight Comment cterm=italic
 endif
-highlight Comment cterm=italic
 
 "" Customize fzf colors to match your color scheme
 let g:fzf_colors =
@@ -160,19 +160,19 @@ set statusline+=\ %l:%c
 set statusline+=%#warningmsg#
 set statusline+=%*
 "ALE
-set statusline+=\
-function! LinterStatus() abort
-	    let l:counts = ale#statusline#Count(bufnr(''))
-	        let l:all_errors = l:counts.error + l:counts.style_error
-		    let l:all_non_errors = l:counts.total - l:all_errors
-		    return l:counts.total == 0 ? 'OK' : printf(
-		            \   '%d⨉ %d⚠ ',
-		            \   all_non_errors,
-		            \   all_errors
-		            \)
-	    endfunction
-	    set statusline+=%=
-	    set statusline+=\ %{LinterStatus()}
+"set statusline+=\
+"function! LinterStatus() abort
+"	let l:counts = ale#statusline#Count(bufnr(''))
+"	let l:all_errors = l:counts.error + l:counts.style_error
+"	let l:all_non_errors = l:counts.total - l:all_errors
+"	return l:counts.total == 0 ? 'OK' : printf(
+"				\   '%d⨉ %d⚠ ',
+"				\   all_non_errors,
+"				\   all_errors
+"				\)
+"endfunction
+"set statusline+=%=
+"set statusline+=\ %{LinterStatus()}
 "}}}
 
 "Mouse config {{{

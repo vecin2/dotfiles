@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "
 "UI and utils{{{
-"Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'https://github.com/lisposter/vim-blackboard.git' "allows window highlighting
 Plugin 'sonph/onehalf', {'rtp':'vim/'}
 Plugin 'sickill/vim-monokai'
