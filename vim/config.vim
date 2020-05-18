@@ -72,7 +72,8 @@ augroup END
 "zi switch folding on or off
 "za toggle current fold open/close
 "zc close current fold
-"zM close all folds
+"zM close all folds, zm decreae the fold level (more folds)
+"zR close all folds, zr increate the fold level (less folds)
 "zv expand folds to reveal cursor
 set nofoldenable
 nnoremap , za
@@ -118,7 +119,7 @@ map OA <up>
 map OB <down>
 map OC <right>
 map OD <left>
-
+"}}}
 
 "Highlight current line number but not line{{{
 hi clear CursorLine
@@ -129,7 +130,6 @@ hi CursorLineNR cterm=bold
 augroup CLNRSet
 	autocmd! ColorScheme * hi CursorLineNR cterm=bold
 augroup END
-"}}}
 "}}}
 
 "Status Line {{{
