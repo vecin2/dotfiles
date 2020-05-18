@@ -2,6 +2,7 @@
 
 export DOTFILES_DIR DOTFILES_CACHE EXTRA_DIR
 DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+echo dotfile_dir is $DOTFILES_DIR
 
 # Bunch of symlinks
 
@@ -29,9 +30,11 @@ ln -sfv "$DOTFILES_DIR/vim/config.vim" ~/.vim/config.vim
 mkdir -p $HOME/.vim
 verint_path=$(wslpath 'C:\ProgramData\Verint\')
 mkdir -p $verint_path
-ln -sfv "${DOTFILES_DIR}"/em ~/.em
+ln -sfv "${DOTFILES_DIR}"/em/em.sh ~/.em.sh
 cp -rf "${DOTFILES_DIR}"/em/powershell/ $verint_path
-echo "Copied '${DOTFILES_DIR}/em/powershell' to '${verint_path}'"
+if [ $? -eq 0 ]; then
+	echo "Copied '${DOTFILES_DIR}/em/powershell' to '${verint_path}'"
+fi
 
 #install wsltty themes
 install_wsltty_theme(){
