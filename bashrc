@@ -144,10 +144,6 @@ google() {
 	firefox "http://www.google.com/search?q=$search"
 }
 
-ccadmin(){
-	cmd.exe wslpath -w "/mnt/c/em/projects/pacificorp/bin/ccadmin.bat" "$@"
-}
-
 muxworkon(){
  tmux kill-session  -t "dummy"
  tmuxinator list-sessions || ( tmux new -d -s "dummy" && tmuxinator start $1 )

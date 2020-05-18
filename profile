@@ -21,18 +21,11 @@ if [ -d "$HOME/bin" ] ; then
 fi
 export EDITOR=vim
 
-JAVA_HOME="/opt/installers/jdk1.8.0_161"
-PATH="$HOME/.local/bin:$JAVA_HOME/bin:$PATH"
-export JAVA_HOME
+#JAVA_HOME="/opt/installers/jdk1.8.0_161"
+#PATH="$HOME/.local/bin:$JAVA_HOME/bin:$PATH"
+#export JAVA_HOME
 
-#rerun
-#export RERUN_MODULES=$HOME/dev/bash/rerun/modules
-#export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
-#source $HOME/dev/bash/rerun/etc/bash_completion.sh
-#export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
-
-[ -s "$HOME/.em.bash" ] && source "$HOME/.em.bash" # Load EM into a shell session *as a function*
-[ -s "/mnt/c/ProgramData/Verint/.em/em.sh" ] && . /mnt/c/ProgramData/Verint/.em/em.sh
+[ -s "$HOME/.em.sh" ] && source "$HOME/.em.sh" # Load EM into a shell session *as a function*
 
 export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templates"
 
@@ -40,5 +33,10 @@ export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templa
 # Needed to allow cx_Oracle python library run DB queries
 export LD_LIBRARY_PATH=/home/dgarcia/oracle/instantclient_19_5/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 export PATH=$PATH:$ORACLE_HOME/bin
-#export LD_LIBRARY_PATH=/usr/lib/oracle/12.1/client64/lib/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
 #export ORACLE_HOME=/usr/lib/oracle/12.1/client64
+
+#rerun
+#export RERUN_MODULES=$HOME/dev/bash/rerun/modules
+#export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
+#source $HOME/dev/bash/rerun/etc/bash_completion.sh
+#export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
