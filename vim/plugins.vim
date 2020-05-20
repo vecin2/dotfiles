@@ -54,7 +54,7 @@ imap <c-x><c-l> <plug>(fzf-complete-line)
 let g:ycm_autoclose_preview_window_after_completion=1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 0
-Arpeggionoremap gt :YcmCompleter GoToDefinition<CR>
+noremap gt :YcmCompleter GoToDefinition<CR>zv
 "}}}
 
 "Vimux {{{

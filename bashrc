@@ -159,6 +159,9 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #Bookmarks
 . $HOME/.local/bin/bashmarks.sh
 . $HOME/.sdirs
+
+export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
+export AD=$EM_CORE_HOME
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #autocomplation for fasd
@@ -170,6 +173,4 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 #[ -n "$PS1" ] && \
 #	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
 #	eval "$("$BASE16_SHELL/profile_helper.sh")"
-#export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
-#export AD=$EM_CORE_HOME
 #export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
