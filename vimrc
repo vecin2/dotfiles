@@ -8,7 +8,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 "
 "UI and utils{{{
-"Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/base16-vim'
 Plugin 'https://github.com/lisposter/vim-blackboard.git' "allows window highlighting
 Plugin 'sonph/onehalf', {'rtp':'vim/'}
 Plugin 'sickill/vim-monokai'
@@ -64,7 +64,9 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
-Plugin 'tmhedberg/SimpylFold' "folds for python
+"Plugin 'tmhedberg/SimpylFold' "folds for python
+Plugin 'kalekundert/vim-coiled-snake'
+Plugin 'Konfekt/FastFold' "it is recommended for performance if vim-coiled-snake is install
 
 "PYTHON IDE
 Plugin 'dense-analysis/ale' "Asynchronous Ling Engine

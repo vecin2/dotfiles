@@ -11,7 +11,7 @@ nnoremap <leader>g :Ag<CR>
 nnoremap <silent> <Leader>ag :Ag <C-R><C-W><CR>
 nnoremap <leader>b :Buffers<CR>
 nnoremap <Leader>t :Files<CR>
-nnoremap <Leader>r :Tags<CR>
+nnoremap <Leader>r :History:<CR>
 ""
 ""Search in project for word under the test
 Arpeggiomap aj <leader>ag
@@ -101,7 +101,7 @@ let g:submode_always_show_submode = 1
 "Allows changin windows size easily
 call submode#enter_with('window', 'n', '', '<C-w>')
 for key in ['a','b','c','d','e','f','g','h','i','j','k','l','m',
-\           'n','o','p','q','r','s','t','u','v','w','x','y','z']
+\           'n','o','p','q','r','s','t','u','v','w','x','y','z','-']
   " maps lowercase, uppercase and <C-key>
   call submode#map('window', 'n', '', key, '<C-w>' . key)
   call submode#map('window', 'n', '', toupper(key), '<C-w>' . toupper(key))
@@ -164,5 +164,5 @@ nmap <silent><Leader>pm <Esc>:Pytest method<CR>
 nmap <silent><Leader>pp <Esc>:Pytest project<CR>
 nmap <silent><Leader>ps <Esc>:Pytest session<CR>
 Arpeggiomap tp <leader>pp
-let g:pytest_test_dir='/home/dgarcia/dev/python/python-emtask/emtask'
+let g:pytest_test_dir='/home/dgarcia/dev/python/python-emtask'
 "}}}
