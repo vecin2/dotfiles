@@ -65,8 +65,9 @@ Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
 "Plugin 'tmhedberg/SimpylFold' "folds for python
-Plugin 'kalekundert/vim-coiled-snake'
-Plugin 'Konfekt/FastFold' "it is recommended for performance if vim-coiled-snake is install
+Plugin 'Python-Syntax-Folding'
+"Plugin 'kalekundert/vim-coiled-snake'
+"Plugin 'Konfekt/FastFold' "it is recommended for performance if vim-coiled-snake is install
 
 "PYTHON IDE
 Plugin 'dense-analysis/ale' "Asynchronous Ling Engine
