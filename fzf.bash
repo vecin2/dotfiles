@@ -101,3 +101,13 @@ fgr(){
      vim $file
   fi
 }
+
+fsvn(){
+	local paths
+	paths=$(svn st | fzf -m | awk '{print $2}')
+
+	if [ "x$paths" != "x" ]
+	then
+		echo $paths | xargs svn $1
+	fi
+}
