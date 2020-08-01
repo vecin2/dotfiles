@@ -153,7 +153,7 @@ muxworkon(){
 export WORKON_HOME=$HOME/.virtualenvs
 export PROJECT_HOME=$HOME/dev/python
 export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-source $HOME/.local/bin/virtualenvwrapper.sh
+#source $HOME/.local/bin/virtualenvwrapper.sh
 
 #### NAVIGATION ###
 #Bookmarks
@@ -162,6 +162,7 @@ source $HOME/.local/bin/virtualenvwrapper.sh
 
 export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
 export AD=$EM_CORE_HOME
+export CLOUD_LOC=$HOME/gdrive
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 #autocomplation for fasd

@@ -274,13 +274,13 @@ augroup END
 	" }}}
 
 	" Shorcuts to main docs {{{
-	nnoremap <Leader>kl :e ~/Documents/kana/kanaLinks.txt<CR>
-	nnoremap <Leader>pl :e ~/Documents/personal/links.txt<CR>
-	nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR>
+	nnoremap <Leader>kl :e $CLOUD_LOC/links/kanaLinks.txt<CR>
+	nnoremap <Leader>pl :e $CLOUD_LOC/links/links.txt<CR>
+	"nnoremap <Leader>adl :e $EM_CORE_HOME/docs/links.txt<CR>
 	nnoremap <Leader>mv :e $MYVIMRC<CR> "Edit MYVIMRC
 	nnoremap <Leader>mc :e ~/.vim/config.vim<CR> "Edit config.vim
 	nnoremap <Leader>mp :e ~/.vim/plugins.vim<CR> "Edit plugins.vim
-	nnoremap <Leader>pn :e $EM_CORE_HOME/docs/notes.txt<CR>
+	"nnoremap <Leader>pn :e $EM_CORE_HOME/docs/notes.txt<CR>
 "}}}
 
 
@@ -291,3 +291,14 @@ function! s:Underline(chars)
   put =strpart(uline, 0, nr_columns)
 endfunction
 command! -nargs=? Underline call s:Underline(<q-args>)
+
+
+command! Kernel execute 'edit'  "$EM_CORE_HOME/logs/ad/cre/kernel/kernel.log"
+command! Stdout execute 'edit'  "$EM_CORE_HOME/logs/ad/weblogic/stdout.log"
+
+function! Vpl()
+	let pl_path= "$EM_CORE_HOME/logs/ad/cre/session/process/"
+	let file_name=system("ls  -ltr " . pl_path . " | grep process | tail -2 | head -1 | rev | cut -d \" \" -f1 | rev")
+	let file_name=substitute(file_name,'%','\\%',"g")
+	execute "edit" . pl_path . file_name
+endfunction
