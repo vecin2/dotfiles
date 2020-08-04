@@ -284,21 +284,17 @@ augroup END
 "}}}
 
 
-function! s:Underline(chars)
-  let chars = empty(a:chars) ? '-' : a:chars
-  let nr_columns = virtcol('$') - 1
-  let uline = repeat(chars, (nr_columns / len(chars)) + 1)
-  put =strpart(uline, 0, nr_columns)
-endfunction
-command! -nargs=? Underline call s:Underline(<q-args>)
 
-
+" Shorcuts to main docs {{{
 command! Kernel execute 'edit'  "$EM_CORE_HOME/logs/ad/cre/kernel/kernel.log"
 command! Stdout execute 'edit'  "$EM_CORE_HOME/logs/ad/weblogic/stdout.log"
 
-function! Vpl()
+function! s:Vpl(...)
+	let tail_no = get(a:, 1, 1)
 	let pl_path= "$EM_CORE_HOME/logs/ad/cre/session/process/"
-	let file_name=system("ls  -ltr " . pl_path . " | grep process | tail -2 | head -1 | rev | cut -d \" \" -f1 | rev")
+	let file_name=system("ls  -ltr " . pl_path . " | grep process | tail -".tail_no." | head -1 | rev | cut -d \" \" -f1 | rev")
 	let file_name=substitute(file_name,'%','\\%',"g")
 	execute "edit" . pl_path . file_name
 endfunction
+command! -nargs=? Vpl call s:Vpl(<f-args>)
+"}}}
