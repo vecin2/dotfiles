@@ -15,8 +15,13 @@ ln -sfv "$DOTFILES_DIR/vimrc" ~/.vimrc
 ln -sfv "$DOTFILES_DIR/gvimrc" ~/.gvimrc
 ln -sfv "$DOTFILES_DIR/fzf.bash" ~/.fzf.bash
 ln -sfv "$DOTFILES_DIR/gitconfig" ~/.gitconfig
-#install gruvbox
-ln -sfv "$DOTFILES_DIR/dircolors/dircolors_gruvbox" ~/.dir_colors
+#install nord
+#link dircolors doesnt seem to work
+selected_dircolors="$DOTFILES_DIR/dircolors/dircolors_nord"
+cp $selected_dircolors ~/.dircolors
+if [ $? -eq 0 ]; then
+	echo "Copied '$selected_dircolors' to '~/.dircolors'"
+fi
 
 ln -sfv "$DOTFILES_DIR/flake8" ~/.flake8
 ln -sfv "$DOTFILES_DIR/pylintrc" ~/.pylintrc
