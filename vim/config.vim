@@ -75,7 +75,7 @@ augroup END
 	"zM close all folds, zm decreae the fold level (more folds)
 	"zR close all folds, zr increate the fold level (less folds)
 	"zv expand folds to reveal cursor
-	set nofoldenable
+	"zx Recompute folds
 	nnoremap , za
 	nnoremap <leader>, zMzv
 	"xml folding
@@ -92,7 +92,7 @@ augroup END
 	set hlsearch
 	"Allows vim to use ag with ack plugin
 	let g:ackprg = 'ag --nogroup --nocolor --column'
-	nmap <leader>a <Esc>:Ack!
+	nnoremap <leader>a <Esc>:Ack!
 	"}}}
 
 	"Clipboard settings {{{
