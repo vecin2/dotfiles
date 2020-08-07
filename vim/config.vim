@@ -75,7 +75,7 @@ augroup END
 	"zM close all folds, zm decreae the fold level (more folds)
 	"zR close all folds, zr increate the fold level (less folds)
 	"zv expand folds to reveal cursor
-	set nofoldenable
+	"zx Recompute folds
 	nnoremap , za
 	nnoremap <leader>, zMzv
 	"xml folding
@@ -92,7 +92,7 @@ augroup END
 	set hlsearch
 	"Allows vim to use ag with ack plugin
 	let g:ackprg = 'ag --nogroup --nocolor --column'
-	nmap <leader>a <Esc>:Ack!
+	nnoremap <leader>a <Esc>:Ack!
 	"}}}
 
 	"Clipboard settings {{{
@@ -200,7 +200,9 @@ augroup END
 	" <leader>-c redraws the screen and removes any search highlighting.
 	nnoremap <silent> <Leader>c :nohl<CR><C-l>
 	"Change root dir to current
-	nnoremap cd. :lcd %:p:h<CR>:pwd<CR>
+	command! Cdw :execute "lcd" . fnamemodify(resolve(expand('%')),':p:h')
+	"nnoremap cd. :lcd %:p:h<CR>:pwd<CR>
+	nnoremap cd. :Cdw
 	"}}}
 
 	" Ctrl+S {{{

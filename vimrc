@@ -22,6 +22,7 @@ Plugin 'https://github.com/blueyed/vim-diminactive'
 "Shorcut commmands, e.g: resize window quicker
 Plugin 'https://github.com/kana/vim-arpeggio.git'
 Plugin 'https://github.com/kana/vim-submode.git'
+Plugin 'git@github.com:tpope/vim-unimpaired.git'
 "}}}
 
 "Search && Navigation {{{
@@ -64,8 +65,8 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'https://github.com/tpope/vim-dispatch.git'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'https://github.com/ervandew/supertab.git'
-"Plugin 'tmhedberg/SimpylFold' "folds for python
-Plugin 'Python-Syntax-Folding'
+Plugin 'tmhedberg/SimpylFold' "folds for python
+"Plugin 'Python-Syntax-Folding'
 "Plugin 'kalekundert/vim-coiled-snake'
 "Plugin 'Konfekt/FastFold' "it is recommended for performance if vim-coiled-snake is install
 
