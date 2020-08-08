@@ -160,7 +160,7 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 . $HOME/.local/bin/bashmarks.sh
 . $HOME/.sdirs
 
-export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
+export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
 export AD=$EM_CORE_HOME
 export CLOUD_LOC=$HOME/gdrive
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
