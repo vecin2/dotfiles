@@ -164,14 +164,3 @@ export EM_CORE_HOME=/mnt/c/em/projects/fp8_hfr2
 export AD=$EM_CORE_HOME
 export CLOUD_LOC=$HOME/gdrive
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-#autocomplation for fasd
-#eval "$(fasd --init auto)"
-
-##### UI #####
-# Base16 Shell
-#BASE16_SHELL="$HOME/.config/base16-shell/"
-#[ -n "$PS1" ] && \
-#	[ -s "$BASE16_SHELL/profile_helper.sh" ] && \
-#	eval "$("$BASE16_SHELL/profile_helper.sh")"
-#export PATH="$PATH:$EM_CORE_HOME/bin" # Add bin EM folder
