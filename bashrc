@@ -57,8 +57,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-		export PS1="\W \$"
+    export PS1="\W \$"
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -102,6 +101,7 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
 # Add ansible specific scripts on this file
 if [ -f ~/.bash_ansible ]; then
     . ~/.bash_ansible
@@ -124,16 +124,15 @@ fi
 #		\$(tty) \${BASH_COMMAND}\" 2>/dev/null >>~/.dotfiles/command_log" DEBUG
 #fi
 
- #Avoid duplicates
-#export HISTCONTROL=ignoredups:erasedups
-
 # After each command, append to the history file and reread it
 export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r; history -n"
 
 
 
-#Enable VcXsrv for clipboard to work correctly within WSL
-export DISPLAY=localhost:0.0
+#If running WSL Enable VcXsrv for clipboard to work correctly
+if grep -q Microsoft /proc/version; then
+  export DISPLAY=localhost:0.0
+fi
 
 google() {
 	search=""
@@ -149,12 +148,6 @@ muxworkon(){
  tmuxinator list-sessions || ( tmux new -d -s "dummy" && tmuxinator start $1 )
 }
 
-#setup python virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME/dev/python
-export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
-#source $HOME/.local/bin/virtualenvwrapper.sh
-
 #### NAVIGATION ###
 #Bookmarks
 . $HOME/.local/bin/bashmarks.sh
@@ -162,5 +155,9 @@ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6
 
 export EM_CORE_HOME=/mnt/c/em/projects/pacificorp
 export AD=$EM_CORE_HOME
+
+#VIM mapping to open docs in CLOUD
 export CLOUD_LOC=$HOME/gdrive
+
+#fzf bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash

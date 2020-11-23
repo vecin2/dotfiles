@@ -32,11 +32,5 @@ export SQL_TEMPLATES_PATH="/home/dgarcia/dev/python/em_automation/sql_gen/templa
 #ORACLE
 # Needed to allow cx_Oracle python library run DB queries
 export LD_LIBRARY_PATH=/home/dgarcia/oracle/instantclient_19_5/${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}
-export PATH=$PATH:$ORACLE_HOME/bin
+#export PATH=$PATH:$ORACLE_HOME/bin
 #export ORACLE_HOME=/usr/lib/oracle/12.1/client64
-
-#rerun
-#export RERUN_MODULES=$HOME/dev/bash/rerun/modules
-#export RERUN=/home/dgarcia/dev/bash/setup-rerun/rerun/rerun
-#source $HOME/dev/bash/rerun/etc/bash_completion.sh
-#export PATH="$PATH:/home/dgarcia/dev/bash/rerun"
