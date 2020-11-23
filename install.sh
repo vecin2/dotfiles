@@ -8,7 +8,6 @@ echo dotfile_dir is $DOTFILES_DIR
 
 ln -sfv "$DOTFILES_DIR/bashrc" ~/.bashrc
 ln -sfv "$DOTFILES_DIR/bash_aliases" ~/.bash_aliases
-ln -sfv "$DOTFILES_DIR/bash_profile" ~/.bash_profile
 ln -sfv "$DOTFILES_DIR/profile" ~/.profile
 ln -sfv "$DOTFILES_DIR/tmux.conf" ~/.tmux.conf
 ln -sfv "$DOTFILES_DIR/vimrc" ~/.vimrc
