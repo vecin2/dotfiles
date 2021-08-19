@@ -101,11 +101,6 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
-
-# Add ansible specific scripts on this file
-if [ -f ~/.bash_ansible ]; then
-    . ~/.bash_ansible
-fi
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -161,3 +156,22 @@ export CLOUD_LOC=$HOME/gdrive
 
 #fzf bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+#BEGIN Setting bash base environment variables
+# After each command, append to the history file and reread it
+export PROMPT_COMMAND="${PROMPT_COMMAND:+$PROMPT_COMMAND$'\n'}history -a; history -c; history -r; history -n"
+
+export EDITOR=vim
+#Remove user name, hostname and full CWD. Only show the last CWD
+export PS1="\[\033[01;34m\]\W\[\033[00m\]\$"
+#END Setting bash base environment variables
+export DISPLAY=localhost:0
+#BEGIN mybash functions
+google() {
+  search=""
+  echo "Googling: $@"
+  for term in $@; do
+    search="$search%20$term"
+  done
+  firefox "http://www.google.com/search?q=$search"
+}
+#END mybash functions
